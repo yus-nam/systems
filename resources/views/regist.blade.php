@@ -50,7 +50,7 @@
                     @endif
                 </div>
 
-                <button type="submit" class="btn btn-default"url="#">更新</button>
+                <button type="submit" class="btn btn-default"url="#">送信</button>
 
                 <button type="submit" class="btn btn-default" url="#">戻る</button>
             </form>

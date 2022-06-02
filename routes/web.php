@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -49,4 +50,5 @@ Route::post('/compreg', [CompanyController::class, 'compregPany'])->name('pany')
 
 
 
-
+Route::get('showLogin', [AuthController::class, 'showLogin'])->name('show');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
