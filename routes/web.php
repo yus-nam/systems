@@ -46,9 +46,3 @@ Route::post('/salreg', [SaleController::class, 'SalregSelling'])->name('selling'
 Route::get('/company', [CompanyController::class, 'showCompany'])->name('company');
 Route::get('/compreg', [CompanyController::class, 'showCompregForm']);
 Route::post('/compreg', [CompanyController::class, 'compregPany'])->name('pany');
-
-
-
-
-Route::get('showLogin', [AuthController::class, 'showLogin'])->name('show');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
