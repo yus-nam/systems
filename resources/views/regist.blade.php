@@ -19,6 +19,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="img_path">商品画像</label>
+                    <img src="" alt="img_path" class="form-control" id="img_path" name="img_path" value="{{ old('img_path') }}">
+                    <!-- <input type="text" class="form-control" id="img_path" name="img_path" placeholder="img_path" value="{{ old('img_path') }}">
+                    @if($errors->has('img_path'))
+                        <p>{{ $errors->first('img_path') }}</p>
+                    @endif -->
+                </div>
+
+
+                <div class="form-group">
                     <label for="product_name">商品名</label>
                     <input type="text" class="form-control" id="product_name" name="product_name" placeholder="product_name" value="{{ old('product_name') }}">
                     @if($errors->has('product_name'))

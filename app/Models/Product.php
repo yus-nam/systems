@@ -22,6 +22,7 @@ class Product extends Model
         // 登録処理
         DB::table('products')->insert([
             'company_id' => $data->company_id,
+            'img_path' => $data->img_path,
             'product_name' => $data->product_name,
             'price' => $data->price,
             'stock' => $data->stock,
