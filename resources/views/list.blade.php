@@ -27,7 +27,7 @@
                 <tr>
                     <th>ID</th>
                     <th>COMPANY_ID</th>
-                    <th>IMG_PATH</th>
+                    <!-- <th>IMG_PATH</th> -->
                     <th>PRODUCT_NAME</th>
                     <th>PRICE</th>
                     <th>STOCK</th>
@@ -39,7 +39,7 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->company_id }}</td>
-                    <td>{{ $product->img_path }}</td>
+                    <!-- <td>{{ $product->img_path }}</td> -->
                     <td>{{ $product->product_name }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->stock }}</td>
