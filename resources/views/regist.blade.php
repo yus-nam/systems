@@ -20,11 +20,11 @@
 
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
-                    <!-- <img src="../public/vegan/tomato.png" alt="img_path" class="form-control" id="img_path" name="img_path" value="{{ old('img_path') }}" width=240px> -->
-                    <input src="../public/vegan/tomato.png" type="text" class="form-control" id="img_path" name="img_path" placeholder="img_path" value="{{ old('img_path') }}">
+                    <img src="../public/vegan/cabbage.png" alt="img_path" class="form-control" id="img_path" name="img_path" value="{{ old('img_path') }}" width=240px>
+                    <!-- <input src="../public/vegan/tomato.png" type="text" class="form-control" id="img_path" name="img_path" placeholder="img_path" value="{{ old('img_path') }}">
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
-                    @endif
+                    @endif -->
                 </div>
 
 
