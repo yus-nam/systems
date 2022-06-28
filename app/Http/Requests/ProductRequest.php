@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'company_id' => 'required | max:255',
-            'img_path' => 'required',
+            'img_path' => 'image|png',
             'product_name' => 'required | max:255',
             'price' => 'required | max:20',
             'stock' => 'required | max:20',
