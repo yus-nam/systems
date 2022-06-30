@@ -48,6 +48,13 @@
             @endforeach
             </tbody>
         </table>
+
+
+        <button type="submit" class="btn btn-default" url="#">詳細表示</button>
+
+        <button type="submit" class="btn btn-default" url="#">削除</button>
+
+        
             <!-- @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth

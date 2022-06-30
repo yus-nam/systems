@@ -31,9 +31,13 @@ Route::post('/usreg', [UserController::class, 'usregUsrsub'])->name('usrsub');
 
 
 // //Article->Product
-Route::get('/list', [ProductController::class, 'showList'])->name('list');
+Route::get('list', [ProductController::class, 'showList'])->name('list');
 Route::get('/regist', [ProductController::class, 'showRegistForm']);
 Route::post('/regist', [ProductController::class, 'registSubmit'])->name('submit');
+
+Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detail');
+
+Route::get('/edit', [ProductController::class, 'showEditForm'])->name('edit');
 
 
 // //Article&List->Sale、Regist->Sales、app->sell、submit->selling

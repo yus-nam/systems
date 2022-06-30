@@ -35,7 +35,7 @@ class AppliController extends Controller
             return back();
         }
     
-        // 処理が完了したらusregにリダイレクト
+        // 処理が完了したらappregにリダイレクト
         return redirect(route('appreg'));
     }
 

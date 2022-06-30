@@ -15,13 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    return $request->appli();
 });
 
 
 // //Article&List->Appli、Regist->Appreg、app->apl、submit->aplsub
 Route::get('/appli', [AppliController::class, 'showAppli'])->name('appli');
-
-
 Route::get('/appreg', [AppliController::class, 'showAppregForm']);
 Route::post('/appreg', [AppliController::class, 'AppregAplsub'])->name('aplsub');

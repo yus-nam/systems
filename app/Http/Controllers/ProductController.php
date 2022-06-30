@@ -15,11 +15,19 @@ class ProductController extends Controller
         $model = new Product();
         $products = $model->getList();
 
-        return view('list', ['products' => $products]);
+        return view('../product/list', ['products' => $products]);
     }
 
     public function showRegistForm() {
-        return view('regist');
+        return view('product/regist');
+    }
+
+    public function showDetailForm() {
+        return view('product/detail');
+    }
+
+    public function showEditForm() {
+        return view('product/edit');
     }
 
     public function registSubmit(ProductRequest $request) {
@@ -38,7 +46,7 @@ class ProductController extends Controller
         }
     
         // 処理が完了したらregistにリダイレクト
-        return redirect(route('regist'));
+        return redirect(route('product/regist'));
     }
 
     
