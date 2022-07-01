@@ -1,12 +1,12 @@
 @extends('layouts.prod')
 
 
-@section('title', '商品画面')
+@section('title', '商品詳細画面')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>Product Form</h1>
+            <h1>Product Edit Form</h1>
             <form action="{{ route('submit') }}" method="post">
                 @csrf
 
@@ -33,6 +33,14 @@
                     <input type="text" class="form-control" id="product_name" name="product_name" placeholder="product_name" value="{{ old('product_name') }}">
                     @if($errors->has('product_name'))
                         <p>{{ $errors->first('product_name') }}</p>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <label for="maker">メーカー</label>
+                    <input type="text" class="form-control" id="maker" name="maker" placeholder="maker" value="{{ old('maker') }}">
+                    @if($errors->has('maker'))
+                        <p>{{ $errors->first('maker') }}</p>
                     @endif
                 </div>
 

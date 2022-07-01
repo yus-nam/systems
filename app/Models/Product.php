@@ -24,6 +24,7 @@ class Product extends Model
             'company_id' => $data->company_id,
             // 'img_path' => $data->img_path,
             'product_name' => $data->product_name,
+            'maker' => $data->maker,
             'price' => $data->price,
             'stock' => $data->stock,
             'comment' => $data->comment,
