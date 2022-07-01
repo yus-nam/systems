@@ -29,6 +29,7 @@
                     <th>COMPANY_ID</th>
                     <!-- <th>IMG_PATH</th> -->
                     <th>PRODUCT_NAME</th>
+                    <th>MAKER</th>
                     <th>PRICE</th>
                     <th>STOCK</th>
                     <th>COMMENT</th>
@@ -41,6 +42,7 @@
                     <td>{{ $product->company_id }}</td>
                     <!-- <td>{{ $product->img_path }}</td> -->
                     <td>{{ $product->product_name }}</td>
+                    <td>{{ $product->maker }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->stock }}</td>
                     <td>{{ $product->comment }}</td>

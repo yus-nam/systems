@@ -37,6 +37,14 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="maker">メーカー</label>
+                    <input type="text" class="form-control" id="maker" name="maker" placeholder="maker" value="{{ old('maker') }}">
+                    @if($errors->has('maker'))
+                        <p>{{ $errors->first('maker') }}</p>
+                    @endif
+                </div>
+
+                <div class="form-group">
                     <label for="price">価格</label>
                     <input type="text" class="form-control" id="price" name="price" placeholder="price" value="{{ old('price') }}">
                     @if($errors->has('price'))
