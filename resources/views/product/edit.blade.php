@@ -36,13 +36,13 @@
                     @endif
                 </div>
 
-                <div class="form-group">
-                    <label for="maker">メーカー</label>
-                    <input type="text" class="form-control" id="maker" name="maker" placeholder="maker" value="{{ old('maker') }}">
-                    @if($errors->has('maker'))
-                        <p>{{ $errors->first('maker') }}</p>
-                    @endif
-                </div>
+                <label for="maker">メーカー</label>
+                <select name="maker" id="maker" placeholder="maker">
+                    <option value="maker_name">メーカー名</option>
+                    <option value="nanairo">七彩農園</option>
+                    <option value="blithedale">ブライズデール牧場</option>
+                    <option value="queensfarm">クインズファーム</option>
+                </select>
 
                 <div class="form-group">
                     <label for="price">価格</label>
