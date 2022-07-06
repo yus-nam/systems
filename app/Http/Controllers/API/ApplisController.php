@@ -4,8 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\API\Applis;
 
-class AppliController extends Controller
+class ApplisController extends Controller
 {
     //User->Appli
     public function showAppli() {
@@ -39,5 +40,5 @@ class AppliController extends Controller
         return redirect(route('appreg'));
     }
 
-
 }
+

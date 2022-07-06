@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\DB;
 class Appli extends Model
 {
     // use HasFactory;
+    protected $table = 'applis';
+    protected $dates = ['created_at', 'updated_at'];
+    protected $fillable = ['id', 'version', 'min_version'];
+
     public function getAppli() {
         // Applisテーブルからデータを取得
         $applis = DB::table('applis')->get();
