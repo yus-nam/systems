@@ -52,7 +52,7 @@
         </table>
 
 
-        <button type="submit" class="btn btn-default" url="#">詳細表示</button>
+        <button type="submit" class="btn btn-default" url="detail"><a href="detail">詳細表示</a></button>
 
         <button type="submit" class="btn btn-default" url="#">削除</button>
 

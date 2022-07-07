@@ -22,14 +22,6 @@ class ProductController extends Controller
         return view('product/regist');
     }
 
-    public function showDetailForm() {
-        return view('product/detail');
-    }
-
-    public function showEditForm() {
-        return view('product/edit');
-    }
-
     public function registSubmit(ProductRequest $request) {
 
         // トランザクション開始
@@ -49,5 +41,19 @@ class ProductController extends Controller
         return redirect(route('product/regist'));
     }
 
+    public function showDetailForm() {
+        return view('product/detail');
+    }
+
+    public function showEditForm() {
+        return view('product/edit');
+    }
+
+    public function deleteProduct() {
+        $model->delete($request);
+
+        //削除が完了したらlistにリダイレクト
+        return redirect('product/list');
+    }
     
 }
