@@ -31,6 +31,9 @@ class Product extends Model
         ]);
     }
 
+
+
+    
     public function deleteProduct($data) {
         // 削除処理
         DB::table('product')->delete();

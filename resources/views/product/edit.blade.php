@@ -41,7 +41,7 @@
                     <option value="maker_name">メーカー名</option>
                     <option value="nanairo">七彩農園</option>
                     <option value="blithedale">ブライズデール牧場</option>
-                    <option value="queensfarm">クインズファーム</option>
+                    <option value="queensfarm">クインズファーム</option> 
                 </select>
 
                 <div class="form-group">
@@ -68,9 +68,9 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default"url="#">更新</button>
+                <button type="submit" class="btn btn-default" url="#"><a href="#">更新</a></button>
 
-                <button type="submit" class="btn btn-default" url="#">戻る</button>
+                <button type="submit" class="btn btn-default" url="#"><a href="detail">戻る</a></button>
             </form>
         </div>
     </div>
