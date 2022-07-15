@@ -41,7 +41,6 @@ class ProductController extends Controller
         return redirect(route('product/regist'));
     }
 
-
     public function showDetailForm() {
         return view('product/detail');
     }

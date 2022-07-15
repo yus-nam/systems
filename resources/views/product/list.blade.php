@@ -54,7 +54,7 @@
 
         <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
 
-        <button type="submit" class="btn btn-default" url="#">削除</button>
+        <button type="submit" class="btn btn-default" url="#"><a href="#">削除</a></button>
 
         
             <!-- @if (Route::has('login'))

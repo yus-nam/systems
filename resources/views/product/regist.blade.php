@@ -68,9 +68,9 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default" url="#" href="#">登録</button>
+                <button type="submit" class="btn btn-default" url="#"><a href="#">登録</a></button>
 
-                <button type="submit" class="btn btn-default" url="list" href="product/list">戻る</button>
+                <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
             </form>
         </div>
     </div>
