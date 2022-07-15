@@ -20,7 +20,7 @@
 
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
-                    <img src="../public/vegan/cucumber.png" alt="img_path" class="form-control" id="img_path" name="img_path" value="{{ old('img_path') }}" width="200px">
+                    <img src="../public/vegan/.png" alt="img_path" class="form-control" id="img_path" name="img_path" value="{{ old('img_path') }}" width="200px">
                     <!-- <input src="../public/vegan/tomato.png" type="text" class="form-control" id="img_path" name="img_path" placeholder="img_path" value="{{ old('img_path') }}">
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
@@ -40,7 +40,7 @@
                 <select name="maker" id="maker" placeholder="maker">
                     <option value="maker_name">メーカー名</option>
                     <option value="nanairo">七彩農園</option>
-                    <option value="blithedale">ブライズデール牧場</option>
+                    <option value="blithedale">山王牧場</option>
                     <option value="queensfarm">クインズファーム</option>
                 </select>
 
@@ -68,9 +68,9 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default" url="#">登録</button>
+                <button type="submit" class="btn btn-default" url="#" href="#">登録</button>
 
-                <button type="submit" class="btn btn-default" url="list">戻る</button>
+                <button type="submit" class="btn btn-default" url="list" href="product/list">戻る</button>
             </form>
         </div>
     </div>

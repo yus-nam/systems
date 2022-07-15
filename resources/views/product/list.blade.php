@@ -40,7 +40,7 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->company_id }}</td>
-                    <!-- <td>{{ $product->img_path }}</td> -->
+                    <td>{{ $product->img_path }}</td>
                     <td>{{ $product->product_name }}</td>
                     <td>{{ $product->maker }}</td>
                     <td>{{ $product->price }}</td>

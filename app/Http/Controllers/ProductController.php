@@ -50,11 +50,11 @@ class ProductController extends Controller
         return view('product/edit');
     }
 
-    public function deleteProduct() {
-        $model->delete($request);
+    // public function deleteProduct() {
+    //     $model->delete($request);
 
-        //削除が完了したらlistにリダイレクト
-        return redirect('product/list');
-    }
+    //     //削除が完了したらlistにリダイレクト
+    //     return redirect('product/list');
+    // }
     
 }

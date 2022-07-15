@@ -68,9 +68,11 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default" url="product/edit"><a href="edit">編集</a></button>
+                <button type="submit" class="btn btn-default">編集</button>
 
-                <button type="submit" class="btn btn-default" url="product/list"><a href="list">戻る</a></button>
+
+
+                <button type="submit" class="btn btn-default">戻る</button>
             </form>
         </div>
     </div>
