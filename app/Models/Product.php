@@ -46,11 +46,9 @@ class Product extends Model
     }
 
 
-    public function deleteProduct($data) {
+    public function deleteProductById($id) {
         // 削除処理
         DB::table('product')->delete();
-
-        return $products;
     }
 
 }

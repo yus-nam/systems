@@ -42,10 +42,30 @@
                     <td>{{ $product->company_id }}</td>
                     <td>{{ $product->img_path }}</td>
                     <td>{{ $product->product_name }}</td>
-                    <td>{{ $product->maker }}</td>
+                    <td>
+                        <select name="maker" id="maker">
+                            <option value="maker">
+                                {{ $product->maker }}
+                            </option>
+                        </select>
+                    </td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->stock }}</td>
                     <td>{{ $product->comment }}</td>
+                    <td>
+                        <form>
+                        <button>
+                        @csrf
+                            <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細</a>
+                        </button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ route('prod.destroy', ['id'=>$product->company_id]) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">削除</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
@@ -53,9 +73,9 @@
 
 
         <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
-
-        <button type="submit" class="btn btn-default" url="#"><a href="#">削除</a></button>
-
+        
+    
+        
         
             <!-- @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">

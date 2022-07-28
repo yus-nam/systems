@@ -48,12 +48,18 @@ class ProductController extends Controller
     public function showEditForm() {
         return view('product/edit');
     }
-
-    // public function deleteProduct() {
-    //     $model->delete($request);
-
-    //     //削除が完了したらlistにリダイレクト
-    //     return redirect('product/list');
-    // }
     
+        /**
+     * 削除処理
+     */
+    public function destroy($id)
+    {
+        // productsテーブルから指定のIDのレコード1件を取得
+        $product = Product::find($id);
+        // レコードを削除
+        $product->delete();
+        // 削除したら一覧画面にリダイレクト
+        return redirect()->route('list');
+    }
+
 }
