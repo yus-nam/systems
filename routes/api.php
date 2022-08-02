@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 // //Article&List->Appli、Regist->Appreg、app->apl、submit->aplsub
-Route::get('/appli', [AppliController::class, 'showAppli'])->name('appli');
-Route::get('/appreg', [AppliController::class, 'showAppregForm']);
-Route::post('/appreg', [AppliController::class, 'AppregAplsub'])->name('aplsub');
+// Route::get('/appli', [AppliController::class, 'showAppli'])->name('appli');
+// Route::get('/appreg', [AppliController::class, 'showAppregForm']);
+// Route::post('/appreg', [AppliController::class, 'AppregAplsub'])->name('aplsub');
+
+Route::get('api','api\ApiController@index');

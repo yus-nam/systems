@@ -39,9 +39,9 @@
                 <label for="maker">メーカー</label>
                 <select name="maker" id="maker" placeholder="maker">
                     <option value="maker_name">メーカー名</option>
-                    <option value="the-kirishima">霧島</option>
-                    <option value="kenon">研音</option>
-                    <option value="toho-ent">東宝</option> 
+                    <option value="the-kirishima">Kirishima</option>
+                    <option value="kenon">KenOn</option>
+                    <option value="toho-ent">TOHO ENT.</option> 
                 </select>
 
                 <div class="form-group">
