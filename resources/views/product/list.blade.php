@@ -33,6 +33,9 @@
                 <button type="submit" name="search">検索</button>
             </form>
 
+            <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
+
+
         <table>
             <thead>
                 <tr>
@@ -74,20 +77,14 @@
                     <td>
                         <form action="{{ route('prod.destroy', ['id'=>$product->company_id]) }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-danger">削除</button>
+                        <button type="submit" name="destroy" class="btn btn-danger">削除</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
-
-
-        <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
-        
-    
-        
-        
+            
             <!-- @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth

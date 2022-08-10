@@ -55,11 +55,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         // productsテーブルから指定のIDのレコード1件を取得
-        $product = Product::find($id);
+        $products = Product::find($id);
         // レコードを削除
-        $product->delete();
+        $products->delete();
         // 削除したら一覧画面にリダイレクト
         return redirect()->route('list');
     }
+    
 
 }
