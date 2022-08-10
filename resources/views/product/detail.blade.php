@@ -20,8 +20,9 @@
 
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
-                    <!-- <img src="../public/vegan/potato.png" alt="img_path" class="form-control" id="img_path" name="img_path" value="{{ old('img_path') }}" width="200px"> -->
-                    <input src="../public/vegan/tomato.png" type="text" class="form-control" id="img_path" name="img_path" placeholder="img_path" value="{{ old('img_path') }}">
+                    
+                    <img src="{{ asset('/vegan') }}" class="card-img"/>
+
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
                     @endif
@@ -69,8 +70,6 @@
                 </div>
                 
                 <button type="submit" class="btn btn-default" url="edit"><a href="edit">編集</a></button>
-
-
 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
             </form>

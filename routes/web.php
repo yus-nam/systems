@@ -40,7 +40,7 @@ Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detai
 Route::get('/edit', [ProductController::class, 'showEditForm'])->name('edit');
 
 //商品の削除
-Route::get('/destroy{id}', [ProductController::class, 'destroy'])->name('prod.destroy');
+Route::post('/destroy{id}', [ProductController::class, 'destroy'])->name('prod.destroy');
 
 
 // //Article&List->Sale、Regist->Sales、app->sell、submit->selling

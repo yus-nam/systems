@@ -54,11 +54,11 @@
                     <td>{{ $product->img_path }}</td>
                     <td>{{ $product->product_name }}</td>
                     <td>
-                        <select name="maker" id="maker">
-                            <option value="maker">
+                        <!-- <select name="maker" id="maker">
+                            <option value="maker"> -->
                                 {{ $product->maker }}
-                            </option>
-                        </select>
+                            <!-- </option>
+                        </select> -->
                     </td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->stock }}</td>
@@ -67,7 +67,7 @@
                         <form>
                         <button>
                         @csrf
-                            <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細</a>
+                            <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細表示</a>
                         </button>
                         </form>
                     </td>
