@@ -18,25 +18,6 @@ class Product extends Model
         return $products;
     }
 
-    public function searchProduct($data) {
-        // 検索処理
-        $search = $_POST[“search”];
-
-        if (isset($_POST["search"])) {
-            //検索ボタン押下時の処理を記述
-            //PDOを使ってMySQLに接続
-            $pdo = new PDO(◯◯◯◯,◯◯◯◯,◯◯◯◯, array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-
-            //SQLを作成
-            $sql = "SELECT * FROM [テーブル名] WHERE [カラム名] = ?";
-
-            //executeで実行
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute(array($search));
-        }
-    }
-
-
     public function registProduct($data) {
         // 登録処理
         DB::table('products')->insert([

@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <form action="" method="post">
+            <form action="" method="get">
                 <input type="text" placeholder="検索" name="search" required>
                 <select name="maker" id="maker" placeholder="maker">
                     <option value="maker_name">メーカー名</option>
