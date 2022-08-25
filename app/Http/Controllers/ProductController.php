@@ -40,15 +40,18 @@ class ProductController extends Controller
         return redirect(route('product/regist'));
     }
 
-    public function searchList() {
+    public function searchList(Request $request) {
+        //ユーザ一覧をページネートで取得
+        $users = Product::paginate(20);
+        
         #キーワード受け取り
-        $keyword = $request->input('keyword');
+        $keyword = $request->input('search');
 
-        #クエリ生成
-        $query = User::query();
+        #クエリ生成(クエリビルダ)
+        $query = Product::query();
 
         #もしキーワードがあったら
-        if(!empty($keyword))
+        if(!empty($search))
         {
         $query->where('name','like','%'.$keyword.'%')->orWhere('mail','like','%'.$keyword.'%');
         }
@@ -57,7 +60,6 @@ class ProductController extends Controller
         $data = $query->orderBy('created_at','desc')->paginate(10);
             return view('product.list')->with('data',$data)->with('keyword',$keyword)->with('message','userList');
     }
-
 
     public function showDetailForm() {
         return view('product/detail');

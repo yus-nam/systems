@@ -32,7 +32,7 @@
                 </select>
                 
                 <div class="col-sm-4" style="padding:20px 0; padding-left:0px;">
-                    <form class="form-inline" action="{{url('/crud')}}">
+                    <form class="form-inline" action="{{url('/list')}}">
                         <div class="form-group">
                             <input type="text" name="keyword" value="{{$keyword}}" class="form-control" placeholder="名前を入力してください">
                         </div>
@@ -45,7 +45,7 @@
 
             <div class="col-sm-8" style="text-align:right;">
                 <div class="paginate">
-                    {{ $data->appends(Request::only('keyword'))->links() }}
+                    {{ $data->appends(Request::only('search'))->links() }}
                 </div>
             </div>
 
