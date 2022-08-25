@@ -36,7 +36,7 @@ Route::get('/regist', [ProductController::class, 'showRegistForm']);
 Route::post('/regist', [ProductController::class, 'registSubmit'])->name('submit');
 
 //検索機能
-// Route::get('/search', [ProductController::class, 'searchList']);
+Route::get('/search', [ProductController::class, 'searchList']);
 
 
 //商品詳細画面への移動

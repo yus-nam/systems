@@ -33,7 +33,7 @@ class Product extends Model
 
 
     public function renewProduct($data) {
-        // 登録処理
+        // 更新処理
         DB::table('products')->insert([
             'company_id' => $data->company_id,
             // 'img_path' => $data->img_path,

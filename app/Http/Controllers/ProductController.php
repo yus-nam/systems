@@ -40,6 +40,25 @@ class ProductController extends Controller
         return redirect(route('product/regist'));
     }
 
+    public function searchList() {
+        #キーワード受け取り
+        $keyword = $request->input('keyword');
+
+        #クエリ生成
+        $query = User::query();
+
+        #もしキーワードがあったら
+        if(!empty($keyword))
+        {
+        $query->where('name','like','%'.$keyword.'%')->orWhere('mail','like','%'.$keyword.'%');
+        }
+
+        #ページネーション
+        $data = $query->orderBy('created_at','desc')->paginate(10);
+            return view('product.list')->with('data',$data)->with('keyword',$keyword)->with('message','userList');
+    }
+
+
     public function showDetailForm() {
         return view('product/detail');
     }

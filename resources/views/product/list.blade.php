@@ -30,8 +30,24 @@
                     <option value="kenon">KenOn</option>
                     <option value="toho-ent">TOHO ENT.</option> 
                 </select>
-                <button type="submit" name="search">検索</button>
+                
+                <div class="col-sm-4" style="padding:20px 0; padding-left:0px;">
+                    <form class="form-inline" action="{{url('/crud')}}">
+                        <div class="form-group">
+                            <input type="text" name="keyword" value="{{$keyword}}" class="form-control" placeholder="名前を入力してください">
+                        </div>
+                            <input type="submit" value="検索" class="btn btn-info">
+                    </form>
+                </div>
+
+                <!-- <button type="submit" name="search">検索</button> -->
             </form>
+
+            <div class="col-sm-8" style="text-align:right;">
+                <div class="paginate">
+                    {{ $data->appends(Request::only('keyword'))->links() }}
+                </div>
+            </div>
 
             <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
 
