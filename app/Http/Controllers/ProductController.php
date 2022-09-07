@@ -40,26 +40,49 @@ class ProductController extends Controller
         return redirect(route('product/regist'));
     }
 
-    public function searchList(Request $request) {
-        //ユーザ一覧をページネートで取得
-        $users = Product::paginate(20);
-        
-        #キーワード受け取り
-        $keyword = $request->input('search');
+    public function SearchList(Request $request) {
+        // 商品一覧をページネートで取得
+        //ページネートが20の場合、20件で1ページ
+        $products = Product::paginate(20);
 
-        #クエリ生成(クエリビルダ)
+        // 検索フォームで入力された値を取得する
+        $search = $request->input('search');
+
+        // クエリビルダ
         $query = Product::query();
 
-        #もしキーワードがあったら
-        if(!empty($search))
-        {
-        $query->where('name','like','%'.$keyword.'%')->orWhere('mail','like','%'.$keyword.'%');
+        // もし検索フォームにキーワードが入力されたら
+        if ($search) {
+
+            // 全角英数字およびスペースを半角に変換
+            $spaceConversion = mb_convert_kana($search, 'as');
+
+            // 単語を半角スペースで区切り、配列にする（例："Nar TOHO ENT." → ["Nar", "TOHO ENT."]）
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+
+
+            // 単語をループで回し、商品名と部分一致するものがあれば、$queryとして保持される
+            foreach($wordArraySearched as $value) {
+                $query->where('product_name', 'like', '%'.$value.'%');
+            }
+
+            // 上記で取得した$queryをページネートにし、変数$usersに代入
+                $products = $query->paginate(20);
         }
 
-        #ページネーション
-        $data = $query->orderBy('created_at','desc')->paginate(10);
-            return view('product.list')->with('data',$data)->with('keyword',$keyword)->with('message','userList');
-    }
+        // ビューにproductsとsearchを変数として渡す
+        return view('list')->with([
+                'products' => $products,
+                'search' => $search,
+            ]);
+    }    
+
+
+
+        
+
+
+
 
     public function showDetailForm() {
         return view('product/detail');

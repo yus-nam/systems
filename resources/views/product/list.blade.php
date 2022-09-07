@@ -22,32 +22,29 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <form action="" method="get">
+            <form action="{{ route('list') }}" method="get">
+                @csrf
                 <input type="text" placeholder="検索" name="search" required>
+                <!-- <input type="search" placeholder="検索" name="search" value="@if (isset($search)) {{ $search }} @endif"> -->
                 <select name="maker" id="maker" placeholder="maker">
                     <option value="maker_name">メーカー名</option>
                     <option value="the-kirishima">Kirishima</option>
                     <option value="kenon">KenOn</option>
                     <option value="toho-ent">TOHO ENT.</option> 
                 </select>
-                
-                <div class="col-sm-4" style="padding:20px 0; padding-left:0px;">
-                    <form class="form-inline" action="{{url('/list')}}">
-                        <div class="form-group">
-                            <input type="text" name="keyword" value="{{$keyword}}" class="form-control" placeholder="名前を入力してください">
-                        </div>
-                            <input type="submit" value="検索" class="btn btn-info">
-                    </form>
-                </div>
 
-                <!-- <button type="submit" name="search">検索</button> -->
+                <button type="submit" name="search">検索</button>
             </form>
 
-            <div class="col-sm-8" style="text-align:right;">
-                <div class="paginate">
-                    {{ $data->appends(Request::only('search'))->links() }}
-                </div>
-            </div>
+            <!-- @foreach($products as $product)
+                <a href="{{ route('list', ['product_id' => $product->id]) }}">
+                    {{ $product->company_id }}
+                    {{ $product->product_name }}
+                    {{ $product->maker }}
+                </a>
+            @endforeach -->
+
+
 
             <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
 

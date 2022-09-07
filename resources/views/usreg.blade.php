@@ -27,10 +27,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">代表責任者</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="password" value="{{ old('password') }}">
-                    @if($errors->has('password'))
-                        <p>{{ $errors->first('password') }}</p>
+                    <label for="representative_name">代表責任者</label>
+                    <input type="representative_name" class="form-control" id="representative_name" name="representative_name" placeholder="representative_name" value="{{ old('representative_name') }}">
+                    @if($errors->has('representative_name'))
+                        <p>{{ $errors->first('representative_name') }}</p>
                     @endif
                 </div>
 
