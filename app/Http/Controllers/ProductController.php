@@ -66,23 +66,16 @@ class ProductController extends Controller
                 $query->where('product_name', 'like', '%'.$value.'%');
             }
 
-            // 上記で取得した$queryをページネートにし、変数$usersに代入
+            // 上記で取得した$queryをページネートにし、変数$productsに代入
                 $products = $query->paginate(20);
         }
 
         // ビューにproductsとsearchを変数として渡す
-        return view('list')->with([
+            return view('list')->with([
                 'products' => $products,
                 'search' => $search,
             ]);
     }    
-
-
-
-        
-
-
-
 
     public function showDetailForm() {
         return view('product/detail');
@@ -103,7 +96,11 @@ class ProductController extends Controller
         $products->delete();
         // 削除したら一覧画面にリダイレクト
         return redirect()->route('list');
+        //ddデバッグ
+        dd($id);
     }
+
+    
     
 
 }
