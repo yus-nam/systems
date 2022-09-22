@@ -62,6 +62,19 @@ class Product extends Model
     public function deleteProductById($id) {
         // 削除処理
         DB::table('products')->delete();
+
+        // productsテーブルから指定のIDのレコード1件を取得
+        $products = Product::find($id);
+        // レコードを削除
+        
+        $products->delete();
+
+        // 削除したら一覧画面にリダイレクト
+        return $this->destroy($id);
+        
+        //ddデバッグ
+        // dd($id);
+
     }
 
 }

@@ -90,14 +90,13 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        // productsテーブルから指定のIDのレコード1件を取得
-        $products = Product::find($id);
-        // レコードを削除
-        $products->delete();
+
+
+        $product = $this->product->deleteProductById();
+
         // 削除したら一覧画面にリダイレクト
         return redirect()->route('list');
-        //ddデバッグ
-        dd($id);
+
     }
 
     

@@ -46,8 +46,8 @@ Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detai
 Route::get('/edit', [ProductController::class, 'showEditForm'])->name('edit');
 
 //商品の削除
-Route::post('/destroy{id}', [ProductController::class, 'destroy'])->name('prod.destroy');
-
+// Route::post('/destroy{id}', [ProductController::class, 'deleteProductById']);
+Route::delete('destroy/{id}', [ProductController::class, 'deleteProductById']);
 
 // //Article&List->Sale、Regist->Sales、app->sell、submit->selling
 Route::get('/sale', [SaleController::class, 'showSale'])->name('sale');

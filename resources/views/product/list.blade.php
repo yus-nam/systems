@@ -88,9 +88,10 @@
                         </form>
                     </td>
                     <td>
-                        <form action="{{ route('prod.destroy', ['id'=>$product->company_id]) }}" method="POST">
+                        <form action="" method="GET">
                         @csrf
-                        <button type="submit" name="destroy" class="btn btn-danger">削除</button>
+                        <!-- <a href="#" data-id="{{ $product->company_id }}" class="btn btn-danger"><button>削除</button></a> -->
+                        <button type="submit" name="delete" class="btn btn-danger">削除</button>
                         </form>
                     </td>
                 </tr>
