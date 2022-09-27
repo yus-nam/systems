@@ -22,6 +22,7 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            <h2>販売商品一覧</h2>
             <form action="{{ route('list') }}" method="get">
                 @csrf
                 <input type="text" placeholder="検索" name="search" required>
@@ -88,11 +89,11 @@
                         </form>
                     </td>
                     <td>
-                        <form action="" method="GET">
+                        <form action="{{ route('delete', ['id'=>$product->company_id]) }}" method="GET" onsubmit="return deleteProductById()">
                         @csrf
                         <!-- <a href="#" data-id="{{ $product->company_id }}" class="btn btn-danger"><button>削除</button></a> -->
                         <button type="submit" name="delete" class="btn btn-danger">削除</button>
-                        </form>
+                        
                     </td>
                 </tr>
             @endforeach
@@ -206,4 +207,16 @@
             </div> -->
         </div>
     </body>
+
+    <script>
+        function deleteProductById() {
+        if(window.confirm('削除してもよろしいですか？')){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    </script>
+
+
 </html>
