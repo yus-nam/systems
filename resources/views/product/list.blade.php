@@ -89,7 +89,7 @@
                         </form>
                     </td>
                     <td>
-                        <form action="{{ route('delete', ['id'=>$product->company_id]) }}" method="GET" onsubmit="return deleteProductById()">
+                        <form action="{{ route('delete', ['id'=>$product->company_id]) }}" method="POST" onsubmit="return deleteProductById()">
                         @csrf
                         <!-- <a href="#" data-id="{{ $product->company_id }}" class="btn btn-danger"><button>削除</button></a> -->
                         <button type="submit" name="delete" class="btn btn-danger">削除</button>
@@ -209,7 +209,7 @@
     </body>
 
     <script>
-        function deleteProductById() {
+    function deleteProductById() {
         if(window.confirm('削除してもよろしいですか？')){
             return true;
         } else {

@@ -87,15 +87,30 @@ class ProductController extends Controller
     
         /**
      * 削除処理
+     * @param int $id
+     * @return view
      */
-    public function destroy($id)
-    {
+    public function deleteProductById($id) {
 
+        $product = Product::destroy($id);
+        // $product = $this->product->deleteProductById();
 
-        $product = $this->product->deleteProductById();
-
+        if (empty($product)) {
+            \Session::flash('err_msg', 'データが存在しません。');
+        
         // 削除したら一覧画面にリダイレクト
         return redirect()->route('list');
+        }
+        try {
+            // 削除処理呼び出し
+            Product::destroy($id);
+            
+        } catch (\Exception $e) {
+            abort(500);
+        }
+            \Session::flash('err_msg', 'データ削除が完了しました。');
+            
+            return redirect()->route('list');
 
     }
 
