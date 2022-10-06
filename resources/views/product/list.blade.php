@@ -26,14 +26,14 @@
             <form action="{{ route('list') }}" method="get">
                 @csrf
                 <input type="text" placeholder="検索" name="search" required>
-                <!-- <input type="search" placeholder="検索" name="search" value="@if (isset($search)) {{ $search }} @endif"> -->
+                
                 <select name="maker" id="maker" placeholder="maker">
                     <option value="maker_name">メーカー名</option>
-                    <option value="the-kirishima">Kirishima</option>
+                    <!-- <option value="the-kirishima">Kirishima</option> -->
                     <option value="kenon">KenOn</option>
                     <option value="toho-ent">TOHO ENT.</option> 
                 </select>
-
+                
                 <button type="submit" name="search">検索</button>
             </form>
 

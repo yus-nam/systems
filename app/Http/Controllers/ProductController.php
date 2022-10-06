@@ -63,7 +63,7 @@ class ProductController extends Controller
 
             // 単語をループで回し、商品名と部分一致するものがあれば、$queryとして保持される
             foreach($wordArraySearched as $value) {
-                $query->where('product_name', 'like', '%'.$value.'%');
+                $query->where('company_id', 'product_name', 'like', '%'.$value.'%');
             }
 
             // 上記で取得した$queryをページネートにし、変数$productsに代入
