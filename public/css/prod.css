@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+html{
+    background-color: white;
+    font-size: 62.5%;
+}
+
+body{
+    color: #333;
+    font-size: 1.6rem;
+}
