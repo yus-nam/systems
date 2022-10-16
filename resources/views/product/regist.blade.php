@@ -1,12 +1,12 @@
 @extends('layouts.prod')
 
 
-@section('title', '商品画面')
+@section('title', '商品登録画面')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>Product Form</h1>
+            <h1>商品登録画面</h1>
             <form action="{{ route('submit') }}" method="post">
                 @csrf
 

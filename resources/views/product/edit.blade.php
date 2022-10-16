@@ -6,7 +6,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>Product Edit Form</h1>
+            <h1>商品編集画面</h1>
             <form action="{{ route('submit') }}" method="post">
                 @csrf
 
