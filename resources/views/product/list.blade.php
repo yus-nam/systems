@@ -65,7 +65,7 @@
                 <tr>
                     <th>ID</th>
                     <th>COMPANY_ID</th>
-                    <!-- <th>IMG_PATH</th> -->
+                    <th>IMG_PATH</th>
                     <th>PRODUCT_NAME</th>
                     <th>MAKER</th>
                     <th>PRICE</th>
