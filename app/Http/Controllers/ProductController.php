@@ -96,7 +96,7 @@ class ProductController extends Controller
         // $product = $this->product->deleteProductById();
 
         if (empty($product)) {
-            \Session::flash('err_msg', 'データが存在しません。');
+            // \Session::flash('err_msg', 'データが存在しません。');
         
         // 削除したら一覧画面にリダイレクト
         return redirect()->route('list');
@@ -108,7 +108,7 @@ class ProductController extends Controller
         } catch (\Exception $e) {
             abort(500);
         }
-            \Session::flash('err_msg', 'データ削除が完了しました。');
+            // \Session::flash('err_msg', 'データ削除が完了しました。');
             
             return redirect()->route('list');
 

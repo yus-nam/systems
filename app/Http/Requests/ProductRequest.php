@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'company_id' => 'required | max:255',
-            // 'img_path' => 'image',
+            'img_path' => 'image',
             'product_name' => 'required | max:25',
             'maker' => 'required | max:20',
             'price' => 'required | max:20',
@@ -44,7 +44,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'company_id' => '企業ID',
-            //'img_path' => '商品画像',
+            'img_path' => '商品画像',
             'product_name' => '商品名',
             'maker' => 'メーカー',
             'price' => '価格',

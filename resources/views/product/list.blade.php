@@ -32,12 +32,13 @@
                 <!-- <input type="text" placeholder="検索" name="search" required> -->
 
             <form method="GET" action="{{ route('list') }}">
-                <input type="search" placeholder="ユーザー名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
+                <input type="search" placeholder="キーワードを入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
                 <select name="maker" id="maker" placeholder="maker">
-                    <option value="maker_name">メーカー名</option> -->
-                    <option value="metropolitan">Metropolitan</option>
-                    <option value="tears">Tears</option>
-                    <option value="yuuhi">YUUHI</option> 
+                    <option value="maker_name">メーカー名</option>
+                    <option value="the-kirishima">Metronome</option>
+                    <option value="kenon">Tears</option>
+                    <option value="toho-ent">YUUHI</option> 
+                    <option value="toho-ent">ShiOu</option>
                 </select>
                 <div>
                     <button type="submit" name="search" class="btn btn-default">検索</button>
