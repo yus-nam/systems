@@ -20,26 +20,37 @@
             }
         </style> -->
 
-        <link rel="stylesheet" href="{{ asset('css/prod.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/prod.css') }}">
 
 
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <h2>販売商品一覧</h2>
-            <form action="{{ route('list') }}" method="get">
+            <!-- <form action="{{ route('list') }}" method="get"> -->
                 @csrf
-                <input type="text" placeholder="検索" name="search" required>
-                
+                <!-- <input type="text" placeholder="検索" name="search" required> -->
+
+            <form method="GET" action="{{ route('list') }}">
+                <input type="search" placeholder="ユーザー名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
                 <select name="maker" id="maker" placeholder="maker">
-                    <option value="maker_name">メーカー名</option>
-                    <!-- <option value="the-kirishima">Kirishima</option> -->
-                    <option value="kenon">KenOn</option>
-                    <option value="toho-ent">TOHO ENT.</option> 
+                    <option value="maker_name">メーカー名</option> -->
+                    <option value="metropolitan">Metropolitan</option>
+                    <option value="tears">Tears</option>
+                    <option value="yuuhi">YUUHI</option> 
                 </select>
-                
-                <button type="submit" name="search">検索</button>
+                <div>
+                    <button type="submit" name="search" class="btn btn-default">検索</button>
+                    <!-- <button>
+                        <a href="{{ route('list') }}" class="text-white">クリア</a>
+                    </button> -->
+                    <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
+                </div>
             </form>
+                
+                
+                
+            
 
             <!-- @foreach($products as $product)
                 <a href="{{ route('list', ['product_id' => $product->id]) }}">
@@ -48,11 +59,6 @@
                     {{ $product->maker }}
                 </a>
             @endforeach -->
-
-
-
-            <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
-
 
         <table>
             <thead>
