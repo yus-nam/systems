@@ -31,7 +31,7 @@ class Product extends Model
         ]);
     }
 
-    protected $table = 'product';
+    protected $table = 'products';
 
     protected $primaryKey = 'company_id';
     
@@ -68,16 +68,16 @@ class Product extends Model
 
 
 
-    public function searchList($data) {
+    public function searchList($search) {
         // //検索処理
         DB::table('products')->insert([
-            'company_id' => $data->company_id,
+            'company_id' => $search->company_id,
             // 'img_path' => $data->img_path,
-            'product_name' => $data->product_name,
-            'maker' => $data->maker,
-            'price' => $data->price,
-            'stock' => $data->stock,
-            'comment' => $data->comment,
+            'product_name' => $search->product_name,
+            'maker' => $search->maker,
+            'price' => $search->price,
+            'stock' => $search->stock,
+            'comment' => $search->comment,
         ]);
     }
 

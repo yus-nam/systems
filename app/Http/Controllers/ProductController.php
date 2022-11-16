@@ -46,12 +46,14 @@ class ProductController extends Controller
     }
 
     public function SearchList(Request $request) {
+
+        // dd($request->all());
         // 商品一覧をページネートで取得
         //ページネートが20の場合、20件で1ページ
         $products = Product::paginate(20);
 
         // 検索フォームで入力された値を取得する
-        $search = $request->input('search');
+        $search = $request->input('keyword');
 
         // クエリビルダ
         $query = Product::query();
@@ -68,15 +70,17 @@ class ProductController extends Controller
 
             // 単語をループで回し、商品名と部分一致するものがあれば、$queryとして保持される
             foreach($wordArraySearched as $value) {
-                $query->where('company_id', 'product_name', 'like', '%'.$value.'%');
+                $query->orwhere('product_name', 'like', '%'.$value.'%');
+                $query->orwhere('company_id','like', '%'.$value.'%');
             }
+            // dd($wordArraySearched);
 
             // 上記で取得した$queryをページネートにし、変数$productsに代入
                 $products = $query->paginate(20);
         }
 
         // ビューにproductsとsearchを変数として渡す
-            return view('list')->with([
+            return view('product/list')->with([
                 'products' => $products,
                 'search' => $search,
             ]);

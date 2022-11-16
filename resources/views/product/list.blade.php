@@ -31,21 +31,22 @@
                 @csrf
                 <!-- <input type="text" placeholder="検索" name="search" required> -->
 
-            <form method="GET" action="{{ route('list') }}">
-                <input type="search" placeholder="キーワードを入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
+            <form method="POST" action="{{ route('search') }}">
+                @csrf
+                <input type="text" placeholder="キーワードを入力" name="keyword" value="">
                 <select name="maker" id="maker" placeholder="maker">
-                    <option value="maker_name">メーカー名</option>
-                    <option value="the-kirishima">Metronome</option>
-                    <option value="kenon">Tears</option>
-                    <option value="toho-ent">YUUHI</option> 
-                    <option value="toho-ent">ShiOu</option>
+                    <option value="">メーカー名</option>
+                    <option value="metro">Metronome</option>
+                    <option value="tears">Tears</option>
+                    <option value="yuuhi">YUUHI</option> 
+                    <option value="shiou">ShiOu</option>
                 </select>
                 <div>
-                    <button type="submit" name="search" class="btn btn-default">検索</button>
+                    <button type="submit" class="btn btn-default">検索</button>
                     <!-- <button>
                         <a href="{{ route('list') }}" class="text-white">クリア</a>
                     </button> -->
-                    <button type="submit" class="btn btn-default" url="detail"><a href="regist">新規登録</a></button>
+                    <a href="regist">新規登録</a>
                 </div>
             </form>
                 
@@ -92,12 +93,9 @@
                     <td>{{ $product->stock }}</td>
                     <td>{{ $product->comment }}</td>
                     <td>
-                        <form>
-                        <button>
-                        @csrf
-                            <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細表示</a>
-                        </button>
-                        </form>
+                        
+                        <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細表示</a>
+                        
                     </td>
                     <td>
                         <form action="{{ route('delete', ['id'=>$product->company_id]) }}" method="POST" onsubmit="return deleteProductById()">
