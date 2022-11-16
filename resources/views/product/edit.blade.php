@@ -68,8 +68,7 @@
                         <p>{{ $errors->first('comment') }}</p>
                     @endif
                 </div>
-                
-                <button type="submit" class="btn btn-default" url="#"><a href="#">更新</a></button>
+                <button type="submit" class="btn btn-default" url="#">更新</button>
 
                 <button type="submit" class="btn btn-default" url="#"><a href="detail">戻る</a></button>
             </form>

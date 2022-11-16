@@ -17,10 +17,12 @@ class ProductController extends Controller
         return view('../product/list', ['products' => $products]);
     }
 
+    //登録画面表示
     public function showRegistForm() {
         return view('product/regist');
     }
 
+    //登録処理
     public function registSubmit(ProductRequest $request) {
 
         // トランザクション開始
@@ -38,6 +40,9 @@ class ProductController extends Controller
     
         // 処理が完了したらregistにリダイレクト
         return redirect(route('product/regist'));
+
+        // $registProduct = $this->product->InsertProduct($request);
+        // return redirect()->route('/product/list');
     }
 
     public function SearchList(Request $request) {
@@ -82,6 +87,9 @@ class ProductController extends Controller
     }
 
     public function showEditForm() {
+
+        // $data = Product::findOrFail($id);
+
         return view('product/edit');
     }
     

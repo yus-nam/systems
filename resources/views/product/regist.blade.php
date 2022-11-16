@@ -8,8 +8,8 @@
         <div class="row">
             <h1>商品登録画面</h1>
             <form action="{{ route('submit') }}" method="post">
-                @csrf
-
+            @csrf
+            
                 <div class="form-group">
                     <label for="company_id">企業ID</label>
                     <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}">
@@ -70,9 +70,10 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default" url="#"><a href="#">登録</a></button>
+                <button type="submit" class="btn btn-default" url=""><a href="">登録</a></button>
 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
+            
             </form>
         </div>
     </div>

@@ -22,7 +22,7 @@ class Product extends Model
         // 登録処理
         DB::table('products')->insert([
             'company_id' => $data->company_id,
-            // 'img_path' => $data->img_path,
+            'img_path' => $data->img_path,
             'product_name' => $data->product_name,
             'maker' => $data->maker,
             'price' => $data->price,
@@ -31,7 +31,44 @@ class Product extends Model
         ]);
     }
 
-    public function searchList($keyword) {
+    protected $table = 'product';
+
+    protected $primaryKey = 'company_id';
+    
+    protected $fillable = [
+        'company_id',
+        'img_path',
+        'produt_name',
+        'maker',
+        'price',
+        'stock',
+        'comment',
+        'created?at',
+        'updated_at'
+    ];
+/**
+     * 一覧画面表示用にproductテーブルから全てのデータを取得
+     */
+    public function findAllProduct()
+    {
+        return Product::all();
+    }
+
+    public function InsertProduct($request)
+    {
+        // リクエストデータを基に管理マスターユーザーに登録する
+        return $this->create([
+            'product_name' => $request->product_name,
+        ]);
+    }
+
+
+
+
+
+
+
+    public function searchList($data) {
         // //検索処理
         DB::table('products')->insert([
             'company_id' => $data->company_id,
