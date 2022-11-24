@@ -70,7 +70,7 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default" url="edit"><a href="edit">編集</a></button>
+                <button type="submit" class="btn btn-default" url="edit"><a href="list">更新</a></button>
 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
             </form>

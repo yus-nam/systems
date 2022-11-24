@@ -28,6 +28,7 @@
                     @endif
                 </div>
 
+
                 <div class="form-group">
                     <label for="product_name">商品名</label>
                     <input type="text" class="form-control" id="product_name" name="product_name" placeholder="product_name" value="{{ old('product_name') }}">
@@ -68,11 +69,10 @@
                         <p>{{ $errors->first('comment') }}</p>
                     @endif
                 </div>
-                <button type="submit" class="btn btn-default" url="edit"><a href="edit">編集</a></button>
+                
+                <button type="submit" class="btn btn-default" url="edit"><a href="list">更新</a></button>
 
-                <button type="submit" class="btn btn-default" url="#">更新</button>
-
-                <button type="submit" class="btn btn-default" url="#"><a href="detail">戻る</a></button>
+                <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
             </form>
         </div>
     </div>
