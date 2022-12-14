@@ -25,3 +25,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::post('/appreg', [AppliController::class, 'AppregAplsub'])->name('aplsub');
 
 Route::get('api','api\ApiController@index');
+
