@@ -26,3 +26,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('api','api\ApiController@index');
 
+

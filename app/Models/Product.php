@@ -62,12 +62,6 @@ class Product extends Model
         ]);
     }
 
-
-
-
-
-
-
     public function searchList($search) {
         // //検索処理
         DB::table('products')->insert([
