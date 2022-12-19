@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
 
@@ -63,6 +64,7 @@ Route::get('/compreg', [CompanyController::class, 'showCompregForm']);
 Route::post('/compreg', [CompanyController::class, 'compregPany'])->name('pany');
 
 
+Route::get('/auth/register', [RegisterController::class, 'register'])->name('register');
 
 Route::get('/auth/login', [LoginController::class, 'login'])->name('login');
 
