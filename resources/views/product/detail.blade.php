@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
                     
-                    <img src="{{ asset('/product/Vending') }}" class="card-img"/>
+                    <img src="{{ asset('/Vending') }}" class="card-img" name="img_path"/>
 
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
