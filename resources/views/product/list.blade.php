@@ -50,10 +50,6 @@
                 </div>
             </form>
                 
-                
-                
-            
-
             <!-- @foreach($products as $product)
                 <a href="{{ route('list', ['product_id' => $product->id]) }}">
                     {{ $product->company_id }}
