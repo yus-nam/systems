@@ -21,7 +21,10 @@
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
                     
-                    <img src="{{ asset('/Vending') }}" class="card-img" name="img_path"/>
+                    <!-- <img src="/public/Vending/" alt="img_path" class="card-img" name="img_path" value="{{ old('img_path') }}"/> -->
+                    <!-- <img src="{{ asset('Vending/Vienna Coffee.jpeg') }}" alt=""> -->
+                    
+                    <input type="file" class="img_path" name="img_path" id="img_path">
 
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
