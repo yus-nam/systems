@@ -6,7 +6,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>商品詳細&編集画面</h1>
+            <h1 class="page_name">商品詳細&編集画面</h1>
             <form action="{{ route('submit') }}" method="post">
                 @csrf
 
@@ -38,14 +38,16 @@
                     @endif
                 </div>
 
-                <label for="maker">メーカー</label>
-                <select name="maker" id="maker" placeholder="maker">
-                    <option value="maker_name">メーカー名</option>
-                    <option value="the-kirishima">Metronome</option>
-                    <option value="kenon">Tears</option>
-                    <option value="toho-ent">YUUHI</option> 
-                    <option value="toho-ent">ShiOu</option>
-                </select>
+                <div class="form-group">
+                <label for="maker" class="maker_name">メーカー</label>
+                    <select name="maker" id="maker" placeholder="maker">
+                        <option value="">メーカー名</option>
+                        <option value="metro">Metronome</option>
+                        <option value="tears">Tears</option>
+                        <option value="yuuhi">YUUHI</option> 
+                        <option value="shiou">ShiOu</option>
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <label for="price">価格</label>

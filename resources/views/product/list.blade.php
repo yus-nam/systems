@@ -26,27 +26,29 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <h2>販売商品一覧</h2>
+        <h1 class="page_name list">販売商品一覧</h1>
             <!-- <form action="{{ route('list') }}" method="get"> -->
                 @csrf
                 <!-- <input type="text" placeholder="検索" name="search" required> -->
 
             <form method="POST" action="{{ route('search') }}">
                 @csrf
-                <input type="text" placeholder="キーワードを入力" name="keyword" value="">
-                <select name="maker" id="maker" placeholder="maker">
-                    <option value="">メーカー名</option>
-                    <option value="metro">Metronome</option>
-                    <option value="tears">Tears</option>
-                    <option value="yuuhi">YUUHI</option> 
-                    <option value="shiou">ShiOu</option>
-                </select>
-                <div>
-                    <button type="submit" class="btn btn-default">検索</button>
+                <div class="form-group change">
+                    <input type="text" placeholder="キーワードを入力" name="keyword" value="">
+                    <select name="maker" id="maker" placeholder="maker" class="maker_name">
+                        <option value="">メーカー名</option>
+                        <option value="metro">Metronome</option>
+                        <option value="tears">Tears</option>
+                        <option value="yuuhi">YUUHI</option> 
+                        <option value="shiou">ShiOu</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-default">検索</button>                    
                     <!-- <button>
                         <a href="{{ route('list') }}" class="text-white">クリア</a>
                     </button> -->
-                    <a href="regist">新規登録</a>
+                
+                    <a href="regist" class="regist">新規登録</a>
                 </div>
             </form>
                 

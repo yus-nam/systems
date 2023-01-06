@@ -1,8 +1,11 @@
 @charset "utf-8";
 
 html{
-    background-color: blueviolet;
+    max-width: 1400px;
+    background-color: white;
     font-size: 62.5%;
+    display: block;
+
 }
 
 body{
@@ -10,6 +13,11 @@ body{
     font-size: 1.6rem;
 }
 
-#search {
-    padding: 1rem;
+h1, .page_name {
+    margin-top: 15px;
+}
+
+.form-group {
+    display: block;
+    padding-bottom: 15px;   
 }
