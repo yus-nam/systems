@@ -20,7 +20,7 @@
             }
         </style> -->
 
-        <link rel="stylesheet" href="{{ asset('public/css/prod.css') }}">
+        <link rel="stylesheet" secure_asset()>
 
 
     </head>
@@ -90,7 +90,7 @@
                     <td>{{ $product->comment }}</td>
                     <td>
                         
-                        <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細表示</a>
+                        <a href="{{ route('edit', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細・編集</a>
                         
                     </td>
                     <td>

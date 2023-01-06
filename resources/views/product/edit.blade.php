@@ -1,12 +1,12 @@
 @extends('layouts.prod')
 
 
-@section('title', '商品編集画面')
+@section('title', '商品詳細&編集画面')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>商品編集画面</h1>
+            <h1>商品詳細&編集画面</h1>
             <form action="{{ route('submit') }}" method="post">
                 @csrf
 
@@ -22,6 +22,7 @@
                     <label for="img_path">商品画像</label>
                     
                     <img src="{{ asset('/Vending') }}" class="card-img" name="img_path"/>
+                    <input type="file" class="img_path" name="img_path" id="img_path">
 
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
