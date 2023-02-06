@@ -22,6 +22,7 @@
 
         <link rel="stylesheet" secure_asset()>
 
+        <link rel="stylesheet" href="/css/prod.css">
 
     </head>
     <body class="antialiased">

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <h1 class="page_name">商品詳細&編集画面</h1>
-            <form action="{{ route('submit') }}" method="post">
+            <form action="{{ route('submit') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
                     
-                    <img src="{{ asset('/Vending') }}" class="card-img" name="img_path"/>
+                    <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
                     <input type="file" class="img_path" name="img_path" id="img_path">
 
                     @if($errors->has('img_path'))
