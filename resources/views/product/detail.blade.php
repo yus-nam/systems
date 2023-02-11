@@ -44,7 +44,7 @@
                     <option value="the-kirishima">Metronome</option>
                     <option value="kenon">Tears</option>
                     <option value="toho-ent">YUUHI</option> 
-                    <option value="toho-ent">ShiOu</option>
+                    <option value="toho-ent">Shiou</option>
                 </select>
 
                 <div class="form-group">

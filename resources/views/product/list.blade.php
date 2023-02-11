@@ -28,6 +28,7 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         <h1 class="page_name list">販売商品一覧</h1>
+        <form action="{{ route('submit') }}" method="post" enctype="multipart/form-data">
             <!-- <form action="{{ route('list') }}" method="get"> -->
                 @csrf
                 <!-- <input type="text" placeholder="検索" name="search" required> -->
@@ -41,7 +42,7 @@
                         <option value="metro">Metronome</option>
                         <option value="tears">Tears</option>
                         <option value="yuuhi">YUUHI</option> 
-                        <option value="shiou">ShiOu</option>
+                        <option value="shiou">Shiou</option>
                     </select>
 
                     <button type="submit" class="btn btn-default">検索</button>                    

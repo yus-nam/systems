@@ -45,7 +45,7 @@
                         <option value="metro">Metronome</option>
                         <option value="tears">Tears</option>
                         <option value="yuuhi">YUUHI</option> 
-                        <option value="shiou">ShiOu</option>
+                        <option value="shiou">Shiou</option>
                     </select>
                 </div>
 
