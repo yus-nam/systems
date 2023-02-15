@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <h1 class="page_name">商品詳細&編集画面</h1>
-            <form action="{{ route('submit') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('submit') }}" method="post">
                 @csrf
 
                 <div class="form-group">
