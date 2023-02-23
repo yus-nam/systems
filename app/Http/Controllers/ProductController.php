@@ -49,8 +49,8 @@ class ProductController extends Controller
 
         // dd($request->all());
         // 商品一覧をページネートで取得
-        //ページネートが20の場合、20件で1ページ
-        $products = Product::paginate(20);
+        //ページネートが10の場合、10件で1ページ
+        $products = Product::paginate(10);
 
         // 検索フォームで入力された値を取得する
         $search = $request->input('keyword');
@@ -84,7 +84,11 @@ class ProductController extends Controller
                 'products' => $products,
                 'search' => $search,
             ]);
-    }    
+
+            // dd($search);
+    }
+
+    
 
     public function showDetailForm() {
         return view('product/detail');
