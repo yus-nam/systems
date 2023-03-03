@@ -53,7 +53,7 @@ class ProductController extends Controller
         $products = Product::paginate(10);
 
         // 検索フォームで入力された値を取得する
-        $search = $request->input('keyword');
+        $search = $request->input('search');
 
         // クエリビルダ
         $query = Product::query();
@@ -70,8 +70,8 @@ class ProductController extends Controller
 
             // 単語をループで回し、商品名と部分一致するものがあれば、$queryとして保持される
             foreach($wordArraySearched as $value) {
-                $query->orwhere('product_name', 'like', '%'.$value.'%');
-                $query->orwhere('company_id','like', '%'.$value.'%');
+                $query->orwhere('product_name', 'LIKE', '%'.$value.'%');
+                $query->orwhere('company_id','LIKE', '%'.$value.'%');
             }
             // dd($wordArraySearched);
 
@@ -80,10 +80,12 @@ class ProductController extends Controller
         }
 
         // ビューにproductsとsearchを変数として渡す
-            return view('product/list')->with([
-                'products' => $products,
-                'search' => $search,
-            ]);
+            // return view('product/list')->with([
+            //     'products' => $products,
+            //     'search' => $search,
+            // ]);
+
+            return $query->get();
 
             // dd($search);
     }
@@ -119,7 +121,7 @@ class ProductController extends Controller
         }
         try {
             // 削除処理呼び出し
-            Product::destroy($id);
+            Product::delete($id);
             
         } catch (\Exception $e) {
             abort(500);

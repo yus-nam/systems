@@ -36,7 +36,7 @@
             <form method="POST" action="{{ route('search') }}">
                 @csrf
                 <div class="form-group change">
-                    <input type="text" placeholder="キーワードを入力" name="keyword" value="">
+                    <input type="search" placeholder="キーワードを入力" name="search" value="">
                     <select name="maker" id="maker" placeholder="maker" class="maker_name">
                         <option value="">メーカー名</option>
                         <option value="metro">Metronome</option>
