@@ -121,7 +121,7 @@ class ProductController extends Controller
         }
         try {
             // 削除処理呼び出し
-            Product::delete($id);
+            Product::destroy($id);
             
         } catch (\Exception $e) {
             abort(500);
