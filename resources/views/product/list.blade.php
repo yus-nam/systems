@@ -34,7 +34,7 @@
                 <!-- <input type="text" placeholder="検索" name="search" required> -->
 
             <form method="POST" action="{{ route('search') }}">
-                @csrf
+                {{ csrf_field() }} 
                 <div class="form-group change">
                     <input type="search" placeholder="キーワードを入力" name="search" value="">
                     <select name="maker" id="maker" placeholder="maker" class="maker_name">
