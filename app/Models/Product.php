@@ -91,20 +91,24 @@ class Product extends Model
 
 
     public function deleteProductById($id) {
-        // 削除処理
-        DB::table('products')->delete();
+        // // 削除処理
+        // DB::table('products')->delete();
 
-        // productsテーブルから指定のIDのレコード1件を取得
-        $products = Product::find($id);
-        // レコードを削除
+        // // productsテーブルから指定のIDのレコード1件を取得
+        // $products = Product::find($id);
+        // // レコードを削除
         
-        $products->delete();
+        // $products->delete();
 
-        // 削除したら一覧画面にリダイレクト
-        return $this->destroy($id);
+        // // 削除したら一覧画面にリダイレクト
+        // return $this->destroy($id);
         
         //ddデバッグ
         // dd($id);
+
+        $products = Product::where('company_id')
+        ->orderBy('company_id', 'desc')
+        ->get();
 
     }
 
