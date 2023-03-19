@@ -15,7 +15,7 @@ class ImageController extends Controller
         $file_name = $request->file('img_path')->getClientOriginalName();
 
         // 取得したファイル名で保存
-        $request->file('img_ぱth')->storeAs('public' . $dir, $file_name);
+        $request->file('img_path')->storeAs('public' . $dir, $file_name);
 
         // publicディレクトリに画像を保存
         // $request->file('img_path')->store('public/' . $dir);
