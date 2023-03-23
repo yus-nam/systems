@@ -45,8 +45,8 @@ class ProductController extends Controller
         // return redirect()->route('/product/list');
     }
 
-    public function SearchList(Request $request) {
-
+    public function searchList(Request $request) {
+        // dd('aaa');
         // dd($request->all());
         // 商品一覧をページネートで取得
         //ページネートが10の場合、10件で1ページ
@@ -59,6 +59,7 @@ class ProductController extends Controller
         $query = Product::query();
 
         // もし検索フォームにキーワードが入力されたら
+        // dd($search);
         if ($search) {
 
             // 全角英数字およびスペースを半角に変換
@@ -77,6 +78,7 @@ class ProductController extends Controller
 
             // 上記で取得した$queryをページネートにし、変数$productsに代入
                 $products = $query->paginate(20);
+                // dd($products);
         }
 
         // ビューにproductsとsearchを変数として渡す
@@ -109,23 +111,24 @@ class ProductController extends Controller
      * @return view
      */
     public function deleteProductById($id) {
+        // dd($id);
 
-        $product = Product::destroy($id);
+        $product = Product::where('id', $id)->delete();
         // $product = $this->product->deleteProductById();
 
-        if (empty($product)) {
-            // \Session::flash('err_msg', 'データが存在しません。');
+        // if (empty($product)) {
+        //     // \Session::flash('err_msg', 'データが存在しません。');
         
-        // 削除したら一覧画面にリダイレクト
-        return redirect()->route('list');
-        }
-        try {
-            // 削除処理呼び出し
-            Product::destroy($id);
+        // // 削除したら一覧画面にリダイレクト
+        // return redirect()->route('list');
+        // }
+        // try {
+        //     // 削除処理呼び出し
+        //     Product::destroy($id);
             
-        } catch (\Exception $e) {
-            abort(500);
-        }
+        // } catch (\Exception $e) {
+        //     abort(500);
+        // }
             // \Session::flash('err_msg', 'データ削除が完了しました。');
             
             return redirect()->route('list');

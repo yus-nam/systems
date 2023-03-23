@@ -28,12 +28,12 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         <h1 class="page_name list">販売商品一覧</h1>
-        <form action="{{ route('submit') }}" method="post">
+        <!-- <form action="{{ route('submit') }}" method="post"> -->
             <!-- <form action="{{ route('list') }}" method="get"> -->
                 @csrf
                 <!-- <input type="text" placeholder="検索" name="search" required> -->
 
-            <form method="POST" action="{{ route('search') }}">
+            <form method="POST" action="{{ route('search') }}" enctype="multipart/form-data">
                 {{ csrf_field() }} 
                 <div class="form-group change">
                     <input type="search" placeholder="キーワードを入力" name="search" value="">
@@ -93,12 +93,10 @@
                     <td>{{ $product->stock }}</td>
                     <td>{{ $product->comment }}</td>
                     <td>
-                        
-                        <a href="{{ route('edit', ['id'=>$product->company_id]) }}" class="btn btn-primary">詳細・編集</a>
-                        
+                        <a href="{{ route('edit', ['id'=>$product->company_id]) }}" class="edit">詳細・編集</a>    
                     </td>
                     <td>
-                        <form action="{{ route('delete', ['id'=>$product->company_id]) }}" method="POST" onsubmit="return deleteProductById()">
+                        <form action="{{ route('delete', ['id'=>$product->id]) }}" method="POST" onsubmit="return deleteProductById()">
                             @csrf
                             <!-- <a href="#" data-id="{{ $product->company_id }}" class="btn btn-danger"><button>削除</button></a> -->
                             <button type="submit" name="delete" class="btn btn-danger">削除</button>
