@@ -2,7 +2,7 @@
 
 html{
     max-width: 1400px;
-    background-color: white;
+    background-color: #aaaaaa;
     font-size: 62.5%;
     display: block;
 
@@ -20,4 +20,8 @@ h1, .page_name {
 .form-group {
     display: block;
     padding-bottom: 15px;   
+}
+
+a {
+    color: red;
 }

@@ -80,12 +80,12 @@ class ProductController extends Controller
         }
 
         // ビューにproductsとsearchを変数として渡す
-            // return view('product/list')->with([
-            //     'products' => $products,
-            //     'search' => $search,
-            // ]);
+            return view('product/list')->with([
+                'products' => $products,
+                'search' => $search,
+            ]);
 
-            return $query->get();
+            // return $query->get();
 
             // dd($search);
     }
