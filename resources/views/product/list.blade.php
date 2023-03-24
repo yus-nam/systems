@@ -22,7 +22,7 @@
 
         <link rel="stylesheet" secure_asset()>
 
-        <link rel="stylesheet" href="/css/prod.css">
+        <link rel="stylesheet" href="{{ asset('/css/prod.css') }}">
 
     </head>
     <body class="antialiased">

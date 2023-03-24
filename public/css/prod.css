@@ -9,7 +9,7 @@ html{
 }
 
 body{
-    color: #333;
+    color: white;
     font-size: 1.6rem;
 }
 
@@ -22,7 +22,11 @@ h1, .page_name {
     padding-bottom: 15px;   
 }
 
-a, .edit {
-    text-decoration: none;
+a {
+    /* text-decoration: none; */
+    color: blue;
+}
+
+a:active {
     color: red;
 }
