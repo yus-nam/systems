@@ -21,12 +21,18 @@
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
                     
-                    <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
-                    <input type="file" class="img_path" name="img_path" id="img_path">
+                    <!-- <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
+                    <input type="file" class="img_path" name="img_path" id="img_path"> -->
 
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
                     @endif
+
+                    <form action="{{ route('list') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="img_path">
+                        <!-- <input type="submit" value="アップロード"> -->
+                    </form>
                 </div>
 
 
@@ -42,7 +48,7 @@
                 <label for="maker" class="maker_name">メーカー</label>
                     <select name="maker" id="maker" placeholder="maker">
                         <option value="">メーカー名</option>
-                        <option value="metro">Metronome</option>
+                        <option value="acala">Acala</option>
                         <option value="tears">Tears</option>
                         <option value="yuuhi">YUUHI</option> 
                         <option value="shiou">Shiou</option>

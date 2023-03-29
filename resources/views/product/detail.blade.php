@@ -41,10 +41,10 @@
                 <label for="maker">メーカー</label>
                 <select name="maker" id="maker" placeholder="maker">
                     <option value="maker_name">メーカー名</option>
-                    <option value="the-kirishima">Metronome</option>
-                    <option value="kenon">Tears</option>
-                    <option value="toho-ent">YUUHI</option> 
-                    <option value="toho-ent">Shiou</option>
+                    <option value="acala">Acala</option>
+                    <option value="tears">Tears</option>
+                    <option value="yuuhi">YUUHI</option> 
+                    <option value="shiou">Shiou</option>
                 </select>
 
                 <div class="form-group">

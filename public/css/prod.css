@@ -2,14 +2,14 @@
 
 html{
     max-width: 1400px;
-    background-color: #aaaaaa;
+    background-color: white;
     font-size: 62.5%;
     display: block;
 
 }
 
 body{
-    color: white;
+    color: black;
     font-size: 1.6rem;
 }
 
@@ -27,6 +27,14 @@ a {
     color: blue;
 }
 
-a:active {
+a:hover {
     color: red;
+}
+
+.btn.btn-danger:hover {
+    opacity: 0.7;
+}
+
+.btn.btn-danger:hover {
+    opacity: 1;
 }

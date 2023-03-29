@@ -103,8 +103,16 @@ class ProductController extends Controller
         // $data = Product::findOrFail($id);
 
         return view('product/edit');
+
     }
-    
+
+    // 更新処理
+    public function updateProduct() {
+        return view('product/list');
+    }
+
+
+
         /**
      * 削除処理
      * @param int $id

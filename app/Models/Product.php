@@ -76,9 +76,9 @@ class Product extends Model
     }
 
 
-    public function renewProduct($data) {
+    public function updateProduct($data) {
         // 更新処理
-        DB::table('products')->insert([
+        DB::table('products')->update([
             'company_id' => $data->company_id,
             // 'img_path' => $data->img_path,
             'product_name' => $data->product_name,

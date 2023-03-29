@@ -22,7 +22,7 @@
 
         <link rel="stylesheet" secure_asset()>
 
-        <link rel="stylesheet" href="{{ asset('/css/prod.css') }}">
+        <link rel="stylesheet" href="{{ asset('prod.css') }}">
 
     </head>
     <body class="antialiased">
@@ -39,11 +39,13 @@
                     <input type="search" placeholder="キーワードを入力" name="search" value="">
                     <select name="maker" id="maker" placeholder="maker" class="maker_name">
                         <option value="">メーカー名</option>
-                        <option value="metro">Metronome</option>
+                        <option value="acala">Acala</option>
                         <option value="tears">Tears</option>
                         <option value="yuuhi">YUUHI</option> 
                         <option value="shiou">Shiou</option>
                     </select>
+
+
 
                     <button type="submit" class="btn btn-default">検索</button>                    
                     <!-- <button>
