@@ -92,8 +92,6 @@ class ProductController extends Controller
             // dd($search);
     }
 
-    
-
     public function showDetailForm() {
         return view('product/detail');
     }
