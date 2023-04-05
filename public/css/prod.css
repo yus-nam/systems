@@ -22,8 +22,8 @@ h1, .page_name {
     padding-bottom: 15px;   
 }
 
-a {
-    /* text-decoration: none; */
+a,.edit {
+    text-decoration: none;
     color: blue;
 }
 
