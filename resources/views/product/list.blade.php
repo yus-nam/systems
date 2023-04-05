@@ -82,8 +82,8 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->company_id }}</td>
-                    <td><img src="{{ asset($image->path) }}"></td>
-                    <!-- <td>{{ $product->img_path }}</td> -->
+                    <td><img src="{{$product->img_path}}"></td>
+                    <td>{{ $product->img_path }}</td>
                     <td>{{ $product->product_name }}</td>
                     <td>
                         <!-- <select name="maker" id="maker">

@@ -12,4 +12,8 @@ class Image extends Model
         'name',
         'path',
       ];
+
+      public function getPostImageAttribute($product){
+        return asset('Vending/'.$product);
+     }
 }
