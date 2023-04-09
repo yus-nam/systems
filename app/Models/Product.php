@@ -74,7 +74,7 @@ class Product extends Model
             'comment' => $search->comment,
         ]);
     }
-
+   
 
     public function updateProduct($data) {
         // 更新処理
@@ -87,8 +87,10 @@ class Product extends Model
             'stock' => $data->stock,
             'comment' => $data->comment,
         ]);
-    }
 
+        dd($data);
+    }
+    
 
     public function deleteProductById($id) {
         // // 削除処理
