@@ -22,6 +22,21 @@ class ProductController extends Controller
         return view('product/regist');
     }
 
+    //追加処理
+    public function createProduct(Request $request)  
+    {  
+        User::Product([
+            "company_id" => $request->company_id,
+            "product_name" => $request->product_name,
+            "maker" => $request->maker,
+            "price" => $request->price,
+            "stock" => $request->stock,
+            "comment" => $request->comment,
+        ]);  
+
+        return redirect("list");  
+    }
+
     //登録処理
     public function registSubmit(ProductRequest $request) {
 

@@ -35,17 +35,17 @@ class Product extends Model
 
     protected $primaryKey = 'company_id';
     
-    protected $fillable = [
-        'company_id',
-        'img_path',
-        'produt_name',
-        'maker',
-        'price',
-        'stock',
-        'comment',
-        'created?at',
-        'updated_at'
-    ];
+    // protected $fillable = [
+    //     'company_id',
+    //     'img_path',
+    //     'produt_name',
+    //     'maker',
+    //     'price',
+    //     'stock',
+    //     'comment',
+    //     'created?at',
+    //     'updated_at'
+    // ];
 /**
      * 一覧画面表示用にproductテーブルから全てのデータを取得
      */
