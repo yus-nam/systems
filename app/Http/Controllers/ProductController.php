@@ -23,21 +23,22 @@ class ProductController extends Controller
     }
 
     //追加処理
-    public function createProduct(Request $request)  
-    {  
-        User::Product([
-            "company_id" => $request->company_id,
-            "product_name" => $request->product_name,
-            "maker" => $request->maker,
-            "price" => $request->price,
-            "stock" => $request->stock,
-            "comment" => $request->comment,
-        ]);  
+    // public function CreateProduct(Request $request) {
+    // {  
+    //     User::create([
+    //         "company_id" => $request->company_id,
+    //         "product_name" => $request->product_name,
+    //         "img_path" => $request->img_path,
+    //         "maker" => $request->maker,
+    //         "price" => $request->price,
+    //         "stock" => $request->stock,
+    //         "comment" => $request->comment,
+    //     ]);  
 
-        return redirect("list");  
-    }
+    //     return redirect("product/list");  
+    // }
 
-    //登録処理
+    // 登録処理
     public function registSubmit(ProductRequest $request) {
 
         // トランザクション開始
@@ -59,6 +60,7 @@ class ProductController extends Controller
         // $registProduct = $this->product->InsertProduct($request);
         // return redirect()->route('/product/list');
     }
+
 
     public function searchList(Request $request) {
         // dd('aaa');
@@ -106,7 +108,7 @@ class ProductController extends Controller
 
             // dd($search);
     }
-
+    
     public function showDetailForm() {
         return view('product/detail');
     }

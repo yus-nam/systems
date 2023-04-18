@@ -8,6 +8,7 @@
         <div class="row">
             <h1>商品登録画面</h1>
             <form action="{{ route('submit') }}" method="post">
+            <!-- <form action="/create" method="post"> -->
             @csrf
             
                 <div class="form-group">
