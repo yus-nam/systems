@@ -110,13 +110,17 @@ class ProductController extends Controller
     }
     
     public function showDetailForm() {
-        return view('product/detail');
+        $product = Product::find($request->company_id);
+        return view('detail');
+
+        dd($company_id);
     }
+
+
 
     public function showEditForm() {
 
         // $data = Product::findOrFail($id);
-
         return view('product/edit');
 
     }
