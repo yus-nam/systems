@@ -113,7 +113,7 @@ class ProductController extends Controller
         $product = Product::find($request->company_id);
         return view('detail');
 
-        dd($company_id);
+        // dd($company_id);
     }
 
 
