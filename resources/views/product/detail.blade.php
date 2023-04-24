@@ -44,7 +44,7 @@
                     <option value="acala">Acala</option>
                     <option value="tears">Tears</option>
                     <option value="yuuhi">YUUHI</option> 
-                    <option value="shiou">Shiou</option>
+                    <option value="satiela">SatieLA</option>
                 </select>
 
                 <div class="form-group">
