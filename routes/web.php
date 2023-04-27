@@ -70,8 +70,6 @@ Route::post('/compreg', [CompanyController::class, 'compregPany'])->name('pany')
 
 // Route::get('/register', [RegisterController::class, '/register'])->name('register');
 
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
