@@ -24,4 +24,7 @@ class Users extends Model
             'password' => $data->password,
         ]);
     }
+
+
+    
 }

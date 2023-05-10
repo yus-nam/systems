@@ -62,34 +62,29 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    // protected function create(array $data)
-    // {
-    //     return User::create([
-    //         'name' => $data['name'],
-    //         'email' => $data['email'],
-    //         'password' => Hash::make($data['password']),
-    //     ]);
-    //     // dd($data);
-    //     if ($hash_data['password']) {
-    //         dd('True');
-    //     } else {
-    //         dd('false');
-    //     }
-    // }
-    
-    public function update(Request $request)
+    protected function create(array $data)
     {
-        // 新しいパスワードの長さをバリデート
 
-        $request->user()->fill([
-            'password' => Hash::make($request->newPassword)
-        ])->save();
+        // dd($data);
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+        // dd($data);
+        // if ($hash_data['password']) {
+        //     dd('True');
+        // } else {
+        //     dd('false');
+        // }
     }
+    
+    // public function update(Request $request)
+    // {
+    //     // 新しいパスワードの長さをバリデート
 
-
-
-
-
-
-
+    //     $request->user()->fill([
+    //         'password' => Hash::make($request->newPassword)
+    //     ])->save();
+    // }
 }
