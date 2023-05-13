@@ -1,12 +1,12 @@
 <?php
-//Article&List->User、Regist->Usreg、app->usr、submit->usrsub
+// Article&List->User、Regist->Usreg、app->usr、submit->usrsub
 namespace App\Models;
 
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Users extends Model
+class Users extends Model//Authenticatable
 {
     // use HasFactory;
     public function getUser() {
@@ -28,3 +28,4 @@ class Users extends Model
 
     
 }
+
