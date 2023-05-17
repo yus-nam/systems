@@ -81,7 +81,7 @@ class Product extends Model
         // 更新処理
         DB::table('products')->where()->update([
             'company_id' => $data->company_id,
-            // 'img_path' => $data->img_path,
+            'img_path' => $data->img_path,
             'product_name' => $data->product_name,
             'maker' => $data->maker,
             'price' => $data->price,
