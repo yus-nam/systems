@@ -75,11 +75,10 @@ class Product extends Model
             'comment' => $search->comment,
         ]);
     }
-   
 
     public function updateProduct($data) {
         // 更新処理
-        DB::table('products')->where()->update([
+        DB::table('products')->where()->firstOrCreate([
             'company_id' => $data->company_id,
             'img_path' => $data->img_path,
             'product_name' => $data->product_name,
@@ -88,9 +87,22 @@ class Product extends Model
             'stock' => $data->stock,
             'comment' => $data->comment,
         ]);
-
-        dd($data);
+        // dd($data);
     }
+
+    // public function updateProduct($data) {
+    //     // 更新処理
+    //     DB::table('products')->where()->update([
+    //         'company_id' => $data->company_id,
+    //         'img_path' => $data->img_path,
+    //         'product_name' => $data->product_name,
+    //         'maker' => $data->maker,
+    //         'price' => $data->price,
+    //         'stock' => $data->stock,
+    //         'comment' => $data->comment,
+    //     ]);
+    //     // dd($data);
+    // }
     
 
     public function deleteProductById($id) {
