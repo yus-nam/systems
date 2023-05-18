@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <h1>商品登録画面</h1>
-            <form action="{{ route('submit') }}" method="post">
+            <form action="{{ route('submit') }}" enctype="multipart/form-data" method="post">
             <!-- <form action="/create" method="post"> -->
             @csrf
             
@@ -25,7 +25,7 @@
                     <!-- <img src="/public/Vending/" alt="img_path" class="card-img" name="img_path" value="{{ old('img_path') }}"/> -->
                     <!-- <img src="{{ asset('Vending/Vienna Coffee.jpeg') }}" alt=""> -->
                     
-                    <input type="file" class="img_path" name="img_path" id="img_path">
+                    <input type="file" class="img_path" id="img_path" name="img_path" value="{{ old('img_path') }}">
 
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
