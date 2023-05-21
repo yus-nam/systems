@@ -54,8 +54,8 @@ class Product extends Model
         return Product::all();
     }
 
-    // public function InsertProduct($request)
-    public function CreateProduct($request)
+    // public function CreateProduct($request)
+    public function InsertProduct($request)
     {
         // リクエストデータを基に管理マスターユーザーに登録する
         return $this->create([
