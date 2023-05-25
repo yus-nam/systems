@@ -127,15 +127,15 @@ class ProductController extends Controller
 
     }
 
-    //追加処理
-    public function addProduct() {
-        return view('product/list') ;
-    }
+    // //追加処理
+    // public function addProduct() {
+    //     return view('product/list') ;
+    // }
 
-    // 更新処理
-    public function updateProduct() {
-        return view('product/list');
-    }
+    // // 更新処理
+    // public function updateProduct() {
+    //     return view('product/list');
+    // }
 
     /**
      * 削除処理

@@ -18,18 +18,18 @@ class Product extends Model
         return $products;
     }
 
-    public function registProduct($data) {
-        // 登録処理
-        DB::table('products')->insert([
-            'company_id' => $data->company_id,
-            'img_path' => $data->img_path,
-            'product_name' => $data->product_name,
-            'maker' => $data->maker,
-            'price' => $data->price,
-            'stock' => $data->stock,
-            'comment' => $data->comment,
-        ]);
-    }
+    // public function registProduct($data) {
+    //     // 登録処理
+    //     DB::table('products')->insert([
+    //         'company_id' => $data->company_id,
+    //         'img_path' => $data->img_path,
+    //         'product_name' => $data->product_name,
+    //         'maker' => $data->maker,
+    //         'price' => $data->price,
+    //         'stock' => $data->stock,
+    //         'comment' => $data->comment,
+    //     ]);
+    // }
 
     protected $table = 'products';
 
@@ -54,14 +54,14 @@ class Product extends Model
         return Product::all();
     }
 
-    // public function CreateProduct($request)
-    public function InsertProduct($request)
-    {
-        // リクエストデータを基に管理マスターユーザーに登録する
-        return $this->create([
-            'product_name' => $request->product_name,
-        ]);
-    }
+    // // public function CreateProduct($request)
+    // public function InsertProduct($request)
+    // {
+    //     // リクエストデータを基に管理マスターユーザーに登録する
+    //     return $this->create([
+    //         'product_name' => $request->product_name,
+    //     ]);
+    // }
 
     public function searchList($search) {
         // //検索処理
@@ -76,24 +76,9 @@ class Product extends Model
         ]);
     }
 
-    public function addProduct($data) {
+    public function InsertProduct($data) {
         // 追加処理
         DB::table('products')->where()->insert([
-            'company_id' => $data->company_id,
-            'img_path' => $data->img_path,
-            'product_name' => $data->product_name,
-            'maker' => $data->maker,
-            'price' => $data->price,
-            'stock' => $data->stock,
-            'comment' => $data->comment,
-        ]);
-        // dd($data);
-    }
-
-    public function updateProduct($data) {
-        // 更新処理
-        DB::table('products')->where()->firstOrCreate([
-            'company_id' => $data->company_id,
             'img_path' => $data->img_path,
             'product_name' => $data->product_name,
             'maker' => $data->maker,
@@ -105,8 +90,8 @@ class Product extends Model
     }
 
     // public function updateProduct($data) {
-    //     // 更新処理
-    //     DB::table('products')->where()->update([
+    //     // 更新処理ptn1
+    //     DB::table('products')->where()->firstOrCreate([
     //         'company_id' => $data->company_id,
     //         'img_path' => $data->img_path,
     //         'product_name' => $data->product_name,
@@ -117,6 +102,22 @@ class Product extends Model
     //     ]);
     //     // dd($data);
     // }
+
+    public function updateProduct($data) {
+        // 更新処理ptn2
+        DB::table('products')->where()->Insert([
+            'company_id' => $data->company_id,
+            'img_path' => $data->img_path,
+            'product_name' => $data->product_name,
+            'maker' => $data->maker,
+            'price' => $data->price,
+            'stock' => $data->stock,
+            'comment' => $data->comment,
+        ]);
+
+        
+        // dd($data);
+    }
     
 
     public function deleteProductById($id) {

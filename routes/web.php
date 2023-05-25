@@ -66,7 +66,7 @@ Route::get('/company', [CompanyController::class, 'showCompany'])->name('company
 Route::get('/compreg', [CompanyController::class, 'showCompregForm']);
 Route::post('/compreg', [CompanyController::class, 'compregPany'])->name('pany');
 
-// Route::get('/login', [LoginController::class, '/login'])->name('login');
+Route::get('/login', [LoginController::class, '/login'])->name('login');
 
 // Route::get('/register', [RegisterController::class, '/register'])->name('register');
 

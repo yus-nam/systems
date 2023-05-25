@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+html{
+    max-width: 1400px;
+    background-color: #D1EDE1;
+    font-size: 62.5%;
+    display: block;
+
+}
+
+body{
+    color: black;
+    font-size: 1.6rem;
+}
+
+h1, .page_name {
+    margin-top: 15px;
+}
+
+.form-group {
+    display: block;
+    padding-bottom: 15px;   
+}
+
+a,.edit {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    color: red;
+}
+
+.btn.btn-danger:hover {
+    opacity: 0.7;
+}
+
+.btn.btn-danger:hover {
+    opacity: 1;
+}
