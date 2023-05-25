@@ -67,9 +67,6 @@
                         <p>{{ $errors->first('img_path') }}</p>
                     @endif
                 </div>
-
-
-
                 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">登録</a></button>
 

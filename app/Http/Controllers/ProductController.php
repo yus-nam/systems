@@ -17,53 +17,6 @@ class ProductController extends Controller
         return view('../product/list', ['products' => $products]);
     }
 
-    //登録画面表示
-    public function showRegistForm() {
-        return view('product/regist');
-    }
-
-    //追加更新処理
-    // public function CreateProduct(Request $request) {
-    public function InsertProduct(Request $request) {
-        {  
-            User::create([
-                "company_id" => $request->company_id,
-                "product_name" => $request->product_name,
-                "img_path" => $request->img_path,
-                "maker" => $request->maker,
-                "price" => $request->price,
-                "stock" => $request->stock,
-                "comment" => $request->comment,
-            ]);
-
-            return redirect("product/list");  
-        }
-    }
-
-    // 登録処理
-    public function registSubmit(ProductRequest $request) {
-
-        // トランザクション開始
-        DB::beginTransaction();
-    
-        try {
-            // 登録処理呼び出し
-            $model = new Product();
-            $model->registProduct($request);
-            DB::commit();
-        } catch (\Exception $e) {
-            DB::rollback();
-            return back();
-        }
-    
-        // 処理が完了したらregistにリダイレクト
-        return redirect(route('product/regist'));
-
-        // $registProduct = $this->product->InsertProduct($request);
-        // return redirect()->route('/product/list');
-    }
-
-
     public function searchList(Request $request) {
         // dd('aaa');
         // dd($request->all());
@@ -111,7 +64,7 @@ class ProductController extends Controller
             // dd($search);
     }
     
-    public function showDetailForm() {
+    public function showDetailForm($data) {
         $product = Product::find($request->company_id);
         return view('detail');
 
@@ -122,20 +75,55 @@ class ProductController extends Controller
 
     public function showEditForm() {
 
-        // $data = Product::findOrFail($id);
+        $data = Product::findOrFail();
+
         return view('product/edit');
 
     }
 
-    // //追加処理
-    // public function addProduct() {
-    //     return view('product/list') ;
-    // }
+    //登録画面表示
+    public function showRegistForm() {
+        return view('product/regist');
+    }
 
-    // // 更新処理
-    // public function updateProduct() {
-    //     return view('product/list');
-    // }
+    //追加更新処理
+    // public function CreateProduct(Request $request) {
+    public function InsertProduct(Request $request) {
+        {  
+            User::create([
+                "company_id" => $request->company_id,
+                "product_name" => $request->product_name,
+                "img_path" => $request->img_path,
+                "maker" => $request->maker,
+                "price" => $request->price,
+                "stock" => $request->stock,
+                "comment" => $request->comment,
+            ]);
+
+            return redirect("product/list");  
+        }
+    }
+
+            // 登録処理
+            public function registSubmit(ProductRequest $request, $data) {
+
+                // トランザクション開始
+                DB::beginTransaction();
+
+                try {
+                    // 登録処理呼び出し
+                    $model = new Product();
+                    $model->registProduct($request);
+                    DB::commit();
+                } catch (\Exception $e) {
+                    DB::rollback();
+                    return back();
+                }
+
+                // 処理が完了したらregistにリダイレクト
+                return redirect(route('product/regist'));
+
+            }
 
     /**
      * 削除処理

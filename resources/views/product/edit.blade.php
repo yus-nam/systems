@@ -11,30 +11,17 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="company_id">企業ID</label>
-                    <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}">
+                    <label for="company_id">商品情報ID</label>
+                    
+                    
+                    
+                    
+                    
+                    <!-- <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}">
                     @if($errors->has('company_id'))
                         <p>{{ $errors->first('company_id') }}</p>
-                    @endif
+                    @endif -->
                 </div>
-
-                <div class="form-group">
-                    <label for="img_path">商品画像</label>
-                    
-                    <!-- <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
-                    <input type="file" class="img_path" name="img_path" id="img_path"> -->
-
-                    @if($errors->has('img_path'))
-                        <p>{{ $errors->first('img_path') }}</p>
-                    @endif
-
-                    <form action="{{ route('list') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="img_path">
-                        <!-- <input type="submit" value="アップロード"> -->
-                    </form>
-                </div>
-
 
                 <div class="form-group">
                     <label for="product_name">商品名</label>
@@ -46,13 +33,8 @@
 
                 <div class="form-group">
                 <label for="maker" class="maker_name">メーカー</label>
-                    <select name="maker" id="maker" placeholder="maker">
-                        <option value="">メーカー名</option>
-                        <option value="acala">Acala</option>
-                        <option value="tears">Tears</option>
-                        <option value="yuuhi">YUUHI</option> 
-                        <option value="satiela">SatieLA</option>
-                    </select>
+                    
+                
                 </div>
 
                 <div class="form-group">
@@ -78,7 +60,26 @@
                         <p>{{ $errors->first('comment') }}</p>
                     @endif
                 </div>
-                
+
+                <div class="form-group">
+                    <label for="img_path">商品画像</label>
+                    
+                    <!-- <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
+                    <input type="file" class="img_path" name="img_path" id="img_path"> -->
+
+                    @if($errors->has('img_path'))
+                        <p>{{ $errors->first('img_path') }}</p>
+                    @endif
+
+                    <form action="{{ route('list') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="img_path">
+                        <!-- <input type="submit" value="アップロード"> -->
+                    </form>
+                </div>
+
+
+
                 <button type="submit" class="btn btn-default" url="edit"><a href="list">更新</a></button>
 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>

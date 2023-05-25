@@ -11,7 +11,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="company_id">企業ID</label>
+                    <label for="company_id">商品情報ID</label>
                     <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}">
                     @if($errors->has('company_id'))
                         <p>{{ $errors->first('company_id') }}</p>
@@ -39,13 +39,7 @@
                 </div>
 
                 <label for="maker">メーカー</label>
-                <select name="maker" id="maker" placeholder="maker">
-                    <option value="maker_name">メーカー名</option>
-                    <option value="acala">Acala</option>
-                    <option value="tears">Tears</option>
-                    <option value="yuuhi">YUUHI</option> 
-                    <option value="satiela">SatieLA</option>
-                </select>
+                
 
                 <div class="form-group">
                     <label for="price">価格</label>
@@ -71,7 +65,7 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default" url="edit"><a href="list">更新</a></button>
+                <button type="submit" class="btn btn-default" url="edit"><a href="list">編集</a></button>
 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
             </form>
