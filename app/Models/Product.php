@@ -54,15 +54,6 @@ class Product extends Model
         return Product::all();
     }
 
-    // // public function CreateProduct($request)
-    // public function InsertProduct($request)
-    // {
-    //     // リクエストデータを基に管理マスターユーザーに登録する
-    //     return $this->create([
-    //         'product_name' => $request->product_name,
-    //     ]);
-    // }
-
     public function searchList($search) {
         // //検索処理
         DB::table('products')->insert([
@@ -77,7 +68,7 @@ class Product extends Model
     }
 
     public function InsertProduct($data) {
-        // 追加処理
+        // 追加処理(新規登録)
         DB::table('products')->where()->insert([
             'img_path' => $data->img_path,
             'product_name' => $data->product_name,
@@ -88,6 +79,23 @@ class Product extends Model
         ]);
         // dd($data);
     }
+
+
+    public function StoreProduct($data) {
+        // 追加処理(新規登録)
+        DB::table('products')->where()->insert([
+            'img_path' => $data->img_path,
+            'product_name' => $data->product_name,
+            'maker' => $data->maker,
+            'price' => $data->price,
+            'stock' => $data->stock,
+            'comment' => $data->comment,
+        ]);
+        // dd($data);
+    }
+
+
+    
 
     // public function updateProduct($data) {
     //     // 更新処理ptn1

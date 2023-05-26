@@ -104,26 +104,31 @@ class ProductController extends Controller
         }
     }
 
-            // 登録処理
-            public function registSubmit(ProductRequest $request, $data) {
+    // 登録処理
+    public function registSubmit(ProductRequest $request, $data) {
 
-                // トランザクション開始
-                DB::beginTransaction();
+        // トランザクション開始
+        DB::beginTransaction();
 
-                try {
-                    // 登録処理呼び出し
-                    $model = new Product();
-                    $model->registProduct($request);
-                    DB::commit();
-                } catch (\Exception $e) {
-                    DB::rollback();
-                    return back();
-                }
+        try {
+            // 登録処理呼び出し
+            $model = new Product();
+            $model->registProduct($request);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return back();
+        }
 
-                // 処理が完了したらregistにリダイレクト
-                return redirect(route('product/regist'));
+        // 処理が完了したらregistにリダイレクト
+        return redirect(route('product/regist'));
 
-            }
+    }
+
+    public function StoreProduct(Request $request, $data) {
+
+    }
+        
 
     /**
      * 削除処理

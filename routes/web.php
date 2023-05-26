@@ -25,13 +25,12 @@ Route::get('/', function () {
 });
 
 
-// //Article&List->User、Regist->Usreg、app->usr、submit->usrsub
+// //Article&List->User、Regist->Usreg、app->usr、submit->usrsub //ユーザ画面
 Route::get('/user', [UserController::class, 'showUser'])->name('user');
 Route::get('/usreg', [UserController::class, 'showUsregForm']);
 Route::post('/usreg', [UserController::class, 'usregUsrsub'])->name('usrsub');
 
-
-// //Article->Product
+// //Article->Product //商品一覧画面
 Route::get('/list', [ProductController::class, 'showList'])->name('list');
 Route::get('/regist', [ProductController::class, 'showRegistForm']);
 Route::post('/regist', [ProductController::class, 'registSubmit'])->name('submit');
@@ -39,11 +38,15 @@ Route::post('/regist', [ProductController::class, 'registSubmit'])->name('submit
 //検索機能
 Route::post('/search', [ProductController::class, 'searchList'])->name('search');
 
+
+Route::get('/store', [ProductController::class, 'StoreProduct'])->name(store);
+
+
 //商品登録画面
-// Route::post('/create', [ProductController::class, 'CreateProduct'])->name('create');
+Route::post('/insert', [ProductController::class, 'InsertProduct'])->name('insert');
 
 //商品詳細画面への移動
-Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detail');
+// Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detail');
 
 //商品編集画面への移動
 Route::get('/edit', [ProductController::class, 'showEditForm'])->name('edit');
