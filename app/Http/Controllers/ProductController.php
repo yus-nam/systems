@@ -12,6 +12,9 @@ class ProductController extends Controller
     public function showList() {
         // インスタンス生成
         $model = new Product();
+
+        // $products = Product::latest()->paginate(8);
+
         $products = $model->getList();
 
         return view('../product/list', ['products' => $products]);
@@ -64,12 +67,12 @@ class ProductController extends Controller
             // dd($search);
     }
     
-    public function showDetailForm($data) {
-        $product = Product::find($request->company_id);
-        return view('detail');
+    // public function showDetailForm($data) {
+    //     $product = Product::find($request->company_id);
+    //     return view('detail');
 
-        // dd($company_id);
-    }
+    //     // dd($company_id);
+    // }
 
 
 
@@ -88,7 +91,7 @@ class ProductController extends Controller
 
     //追加更新処理
     // public function CreateProduct(Request $request) {
-    public function InsertProduct(Request $request) {
+    public function CreateProduct(Request $request) {
         {  
             User::create([
                 "company_id" => $request->company_id,
@@ -128,7 +131,14 @@ class ProductController extends Controller
     public function StoreProduct(Request $request, $data) {
 
     }
-        
+
+
+
+
+
+
+
+
 
     /**
      * 削除処理

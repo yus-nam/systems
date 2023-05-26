@@ -67,7 +67,7 @@ class Product extends Model
         ]);
     }
 
-    public function InsertProduct($data) {
+    public function CreateProduct($data) {
         // 追加処理(新規登録)
         DB::table('products')->where()->insert([
             'img_path' => $data->img_path,
