@@ -6,13 +6,13 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>商品詳細画面</h1>
+            <h1 class="page_name">商品情報詳細画面</h1>
             <form action="{{ route('submit') }}" method="post">
                 @csrf
 
                 <div class="form-group">
                     <label for="company_id">商品情報ID</label>
-                    <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}">
+                    <!-- <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}"> -->
                     @if($errors->has('company_id'))
                         <p>{{ $errors->first('company_id') }}</p>
                     @endif
@@ -65,7 +65,7 @@
                     @endif
                 </div>
                 
-                <button type="submit" class="btn btn-default" url="edit"><a href="list">編集</a></button>
+                <button type="submit" class="btn btn-default" url="edit"><a href="edit">編集</a></button>
 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
             </form>

@@ -6,7 +6,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1 class="page_name">商品詳細&編集画面</h1>
+            <h1 class="page_name">商品情報編集画面</h1>
             <form action="{{ route('submit') }}" method="post">
                 @csrf
 
@@ -80,9 +80,9 @@
 
 
 
-                <button type="submit" class="btn btn-default" url="edit"><a href="list">更新</a></button>
+                <button type="submit" class="btn btn-default" url="edit"><a href="#">更新</a></button>
 
-                <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
+                <button type="submit" class="btn btn-default" url="list"><a href="detail">戻る</a></button>
             </form>
         </div>
     </div>

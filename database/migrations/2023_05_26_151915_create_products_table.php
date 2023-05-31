@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('company_id');
             $table->binary('img_path');
             $table->string('product_name');
+            // $table->string('maker');
             $table->integer('price');
             $table->integer('stock');
             $table->text('comment')->nullable();

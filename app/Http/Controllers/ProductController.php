@@ -67,20 +67,22 @@ class ProductController extends Controller
             // dd($search);
     }
     
-    // public function showDetailForm($data) {
+    public function showDetailForm() {
     //     $product = Product::find($request->company_id);
-    //     return view('detail');
+        return view('product/detail');
 
-    //     // dd($company_id);
-    // }
+        // dd($company_id);
+    }
 
 
 
     public function showEditForm() {
 
-        $data = Product::findOrFail();
+        // $data = Product::findOrFail();
 
         return view('product/edit');
+
+        // dd($data);
 
     }
 
@@ -89,26 +91,8 @@ class ProductController extends Controller
         return view('product/regist');
     }
 
-    //追加更新処理
-    // public function CreateProduct(Request $request) {
-    public function CreateProduct(Request $request) {
-        {  
-            User::create([
-                "company_id" => $request->company_id,
-                "product_name" => $request->product_name,
-                "img_path" => $request->img_path,
-                "maker" => $request->maker,
-                "price" => $request->price,
-                "stock" => $request->stock,
-                "comment" => $request->comment,
-            ]);
-
-            return redirect("product/list");  
-        }
-    }
-
     // 登録処理
-    public function registSubmit(ProductRequest $request, $data) {
+    public function registSubmit(ProductRequest $request) {
 
         // トランザクション開始
         DB::beginTransaction();
@@ -128,17 +112,28 @@ class ProductController extends Controller
 
     }
 
+    //追加処理
+    // public function CreateProduct(Request $request) {
+    public function CreateProduct(Request $request, $data) {
+        {  
+            User::create([
+                "company_id" => $request->company_id,
+                "product_name" => $request->product_name,
+                "img_path" => $request->img_path,
+                "maker" => $request->maker,
+                "price" => $request->price,
+                "stock" => $request->stock,
+                "comment" => $request->comment,
+            ]);
+
+            return redirect("product/list");  
+        }
+    }
+
+    //更新処理
     public function StoreProduct(Request $request, $data) {
 
     }
-
-
-
-
-
-
-
-
 
     /**
      * 削除処理

@@ -18,18 +18,18 @@ class Product extends Model
         return $products;
     }
 
-    // public function registProduct($data) {
-    //     // 登録処理
-    //     DB::table('products')->insert([
-    //         'company_id' => $data->company_id,
-    //         'img_path' => $data->img_path,
-    //         'product_name' => $data->product_name,
-    //         'maker' => $data->maker,
-    //         'price' => $data->price,
-    //         'stock' => $data->stock,
-    //         'comment' => $data->comment,
-    //     ]);
-    // }
+    public function registProduct($data) {
+        // 登録処理
+        DB::table('products')->insert([
+            'company_id' => $data->company_id,
+            'img_path' => $data->img_path,
+            'product_name' => $data->product_name,
+            'maker' => $data->maker,
+            'price' => $data->price,
+            'stock' => $data->stock,
+            'comment' => $data->comment,
+        ]);
+    }
 
     protected $table = 'products';
 
@@ -46,7 +46,8 @@ class Product extends Model
     //     'created?at',
     //     'updated_at'
     // ];
-/**
+
+    /**
      * 一覧画面表示用にproductテーブルから全てのデータを取得
      */
     public function findAllProduct()
@@ -65,10 +66,11 @@ class Product extends Model
             'stock' => $search->stock,
             'comment' => $search->comment,
         ]);
+        dd($search);
     }
 
     public function CreateProduct($data) {
-        // 追加処理(新規登録)
+    //     // 追加処理(新規登録)
         DB::table('products')->where()->insert([
             'img_path' => $data->img_path,
             'product_name' => $data->product_name,
@@ -79,7 +81,6 @@ class Product extends Model
         ]);
         // dd($data);
     }
-
 
     public function StoreProduct($data) {
         // 追加処理(新規登録)
@@ -93,23 +94,6 @@ class Product extends Model
         ]);
         // dd($data);
     }
-
-
-    
-
-    // public function updateProduct($data) {
-    //     // 更新処理ptn1
-    //     DB::table('products')->where()->firstOrCreate([
-    //         'company_id' => $data->company_id,
-    //         'img_path' => $data->img_path,
-    //         'product_name' => $data->product_name,
-    //         'maker' => $data->maker,
-    //         'price' => $data->price,
-    //         'stock' => $data->stock,
-    //         'comment' => $data->comment,
-    //     ]);
-    //     // dd($data);
-    // }
 
     public function updateProduct($data) {
         // 更新処理ptn2

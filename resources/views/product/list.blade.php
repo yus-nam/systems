@@ -96,7 +96,8 @@
                     <td>{{ $product->stock }}</td>
                     <td>{{ $product->comment }}</td>
                     <td>
-                        <a href="{{ route('edit', ['id'=>$product->company_id]) }}" class="edit">詳細・編集</a>    
+                        <!-- <a href="{{ route('edit', ['id'=>$product->company_id]) }}" class="edit">詳細・編集</a>  -->
+                        <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="detail">詳細</a> 
                     </td>
                     <td>
                         <form action="{{ route('delete', ['id'=>$product->id]) }}" method="POST" onsubmit="return deleteProductById()">
