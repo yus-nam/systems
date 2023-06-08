@@ -130,10 +130,23 @@ class ProductController extends Controller
         }
     }
 
-    //更新処理
+    //画像登録処理
     public function StoreProduct(Request $request, $data) {
-
+        {   
+            $data = $request->all();
+            // dd($data);
+            $image = $request->file('img_path');
+            // dd($image);
+            // 画像がアップロードされていれば、storageに保存
+            if($request->hasFile('img_path')) {
+                $path = \Storage::put('/public/Vending', $img_path);
+                $path = explode('/', $path);
+            } else {
+                $path = null;
+            }
+        }
     }
+
 
     /**
      * 削除処理

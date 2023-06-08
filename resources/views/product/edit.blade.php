@@ -63,19 +63,21 @@
 
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
+                    <img src=" {{ '/storgae/' . $memo['img_path'] }}" class="w-100 mb-3" alt="">
+                    <form method="POST">
                     
                     <!-- <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
                     <input type="file" class="img_path" name="img_path" id="img_path"> -->
 
-                    @if($errors->has('img_path'))
+                    <!-- @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>
                     @endif
 
                     <form action="{{ route('list') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="img_path">
-                        <!-- <input type="submit" value="アップロード"> -->
-                    </form>
+                        <input type="submit" value="アップロード"> -->
+                    <!-- </form> -->
                 </div>
 
 

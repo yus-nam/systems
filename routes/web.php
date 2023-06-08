@@ -73,3 +73,5 @@ Route::get('/login', [LoginController::class, '/login'])->name('login');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/store', [ProductController::class, 'StoreProduct'])->name('store');

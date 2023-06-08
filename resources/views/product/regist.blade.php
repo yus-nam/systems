@@ -6,7 +6,8 @@
     <div class="container">
         <div class="row">
             <h1>商品登録画面</h1>
-            <form action="{{ route('submit') }}" enctype="multipart/form-data" method="post">
+            <!-- <form method="POST" action="{{ route('submit') }}" enctype="multipart/form-data"> -->
+            <form method="POST" action="/store" enctype="multipart/form-data">
             <!-- <form action="/create" method="post"> -->
             @csrf
                 
