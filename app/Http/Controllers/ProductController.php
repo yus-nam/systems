@@ -145,6 +145,7 @@ class ProductController extends Controller
                 $path = null;
             }
         }
+        dd($data);
     }
 
 
