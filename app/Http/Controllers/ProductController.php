@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\DB;
+use App\Tag;
 
 class ProductController extends Controller
 {
@@ -145,9 +146,8 @@ class ProductController extends Controller
                 $path = null;
             }
         }
-        dd($data);
+        dd($path);
     }
-
 
     /**
      * 削除処理
