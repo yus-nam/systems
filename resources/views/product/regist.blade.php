@@ -7,7 +7,7 @@
         <div class="row">
             <h1>商品登録画面</h1>
             <!-- <form method="POST" action="{{ route('submit') }}" enctype="multipart/form-data"> -->
-            <form method="POST" action="/store" enctype="multipart/form-data">
+            <form method="POST" action="store" enctype="multipart/form-data">
             <!-- <form action="/create" method="post"> -->
             @csrf
                 
@@ -67,8 +67,10 @@
                         <p>{{ $errors->first('img_path') }}</p>
                     @endif
                 </div>
-                
-                <button type="submit" class="btn btn-default" url="list"><a href="list">登録</a></button>
+
+                <!-- <button type="submit" class="btn btn-default" onclick="location.href=list">登録</button> -->
+
+                <button type="submit" class="btn btn-default" url=""><a href="list">登録</a></button>
 
                 <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
             

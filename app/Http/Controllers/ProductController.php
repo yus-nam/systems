@@ -136,7 +136,7 @@ class ProductController extends Controller
         {   
             $data = $request->all();
             // dd($data);
-            $image = $request->file('img_path');
+            $img_path = $request->file('img_path');
             // dd($image);
             // 画像がアップロードされていれば、storageに保存
             if($request->hasFile('img_path')) {
