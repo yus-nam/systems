@@ -8,14 +8,10 @@
         <div class="row">
             <h1 class="page_name">商品情報編集画面</h1>
             <form action="{{ route('submit') }}" method="post">
-                @csrf
-
+                <!-- @csrf -->
+                {{ csrf_field() }}
                 <div class="form-group">
                     <label for="company_id">商品情報ID</label>
-                    
-                    
-                    
-                    
                     
                     <!-- <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}">
                     @if($errors->has('company_id'))
@@ -63,7 +59,7 @@
 
                 <div class="form-group">
                     <label for="img_path">商品画像</label>
-                    <img src=" {{ '/storgae/' . $memo['img_path'] }}" class="w-100 mb-3" alt="">
+                    <img src=" {{ '/storage/' . old('img_path') }}" class="w-100 mb-3" alt="">
                     <form method="POST">
                     
                     <!-- <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>

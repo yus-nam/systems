@@ -40,7 +40,9 @@ Route::post('/search', [ProductController::class, 'searchList'])->name('search')
 
 //商品登録画面 //データを受け取る処理
 Route::get('/create', [ProductController::class, 'CreateProduct'])->name('create');
-Route::post('/store', [ProductController::class, 'StoreProduct'])->name('store');
+
+// 画像登録処理
+Route::post('/store', [ProductController::class, 'StoreImageProduct'])->name('store');
 
 //商品詳細画面への移動
 Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detail');
@@ -49,7 +51,7 @@ Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detai
 Route::get('/edit', [ProductController::class, 'showEditForm'])->name('edit');
 
 //商品更新処理
-Route::get('/update', [ProductController::class, 'showUpdateForm'])->name('update');
+Route::get('/update', [ProductController::class, 'UpdateItemForm'])->name('update');
 
 //商品の削除
 // Route::post('/destroy{id}', [ProductController::class, 'deleteProductById']);
@@ -73,5 +75,3 @@ Route::get('/login', [LoginController::class, '/login'])->name('login');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::post('/store', [ProductController::class, 'StoreProduct'])->name('store');

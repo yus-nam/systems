@@ -21,6 +21,7 @@ class ProductController extends Controller
         return view('../product/list', ['products' => $products]);
     }
 
+    // 検索処理
     public function searchList(Request $request) {
         // dd('aaa');
         // dd($request->all());
@@ -68,25 +69,6 @@ class ProductController extends Controller
             // dd($search);
     }
     
-    public function showDetailForm() {
-    //     $product = Product::find($request->company_id);
-        return view('product/detail');
-
-        // dd($company_id);
-    }
-
-
-
-    public function showEditForm() {
-
-        // $data = Product::findOrFail();
-
-        return view('product/edit');
-
-        // dd($data);
-
-    }
-
     //登録画面表示
     public function showRegistForm() {
         return view('product/regist');
@@ -113,6 +95,26 @@ class ProductController extends Controller
 
     }
 
+    public function showDetailForm() {
+
+        //     $product = Product::find($request->company_id);
+
+            return view('product/detail');
+        
+            // dd($company_id);
+        
+        }
+    
+        public function showEditForm() {
+        
+            // $data = Product::findOrFail();
+        
+            return view('product/edit');
+        
+            // dd($data);
+    
+        }    
+
     //追加処理
     // public function CreateProduct(Request $request) {
     public function CreateProduct(Request $request, $data) {
@@ -132,7 +134,7 @@ class ProductController extends Controller
     }
 
     //画像登録処理
-    public function StoreProduct(Request $request, $data) {
+    public function StoreImageProduct(Request $request, $data) {
         {   
             $data = $request->all();
             // dd($data);
@@ -149,6 +151,22 @@ class ProductController extends Controller
         dd($path);
     }
 
+    public function UpdateItemForm() {
+        {  
+            Product::create([
+                'img_path' => $request->img_path,
+                'product_name' => $request->product_name,
+                'maker' => $request->maker,
+                'price' => $request->price,
+                'stock' => $request->stock,
+                'comment' => $request->comment,
+            ]);  
+        
+            return redirect("list");  
+        }
+    }
+
+    
     /**
      * 削除処理
      * @param int $id
