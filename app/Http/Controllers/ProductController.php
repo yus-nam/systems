@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\DB;
-use App\Tag;
+// use App\Tag;
 
 class ProductController extends Controller
 {
@@ -119,7 +119,7 @@ class ProductController extends Controller
     // public function CreateProduct(Request $request) {
     public function CreateProduct(Request $request, $data) {
         {  
-            User::create([
+            Product::create([
                 "company_id" => $request->company_id,
                 "product_name" => $request->product_name,
                 "img_path" => $request->img_path,
@@ -128,6 +128,8 @@ class ProductController extends Controller
                 "stock" => $request->stock,
                 "comment" => $request->comment,
             ]);
+
+            $product->save();    
 
             return redirect("product/list");  
         }

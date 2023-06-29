@@ -78,7 +78,7 @@
 
 
 
-                <button type="submit" class="btn btn-default" url="edit"><a href="#">更新</a></button>
+                <button type="submit" class="btn btn-default" url="edit"><a href="list">更新</a></button>
 
                 <button type="submit" class="btn btn-default" url="list"><a href="detail">戻る</a></button>
             </form>
