@@ -11,7 +11,7 @@
                 <!-- @csrf -->
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="company_id">商品情報ID</label>
+                    <label for="company_id">企業ID</label>
                     
                     <!-- <input type="text" class="form-control" id="company_id" name="company_id" placeholder="company_id" value="{{ old('company_id') }}">
                     @if($errors->has('company_id'))

@@ -18,23 +18,23 @@ class ProductSeeder extends Seeder
 
 
 
-//         \DB::table('products')->insert([
-//         [
-//             'created_at' => date('y-m-d H:i:s'),
-//             'updated_at' => null,
-//             'product_name' => 'film of camera',
-//         ],
-//         [
-//             'created_at' => date('y-m-d H:i:s'),
-//             'updated_at' => null,
-//             'product_name' => 'instax12mini',
-//         ],
-//         [
-//             'created_at' => date('y-m-d H:i:s'),
-//             'updated_at' => null,
-//             'product_name' => 'instax reply',
-//         ],
-//     ]);
+        \DB::table('products')->insert([
+        [
+            'created_at' => date('y-m-d H:i:s'),
+            'updated_at' => null,
+            'product_name' => 'film of camera',
+        ],
+        [
+            'created_at' => date('y-m-d H:i:s'),
+            'updated_at' => null,
+            'product_name' => 'instax12mini',
+        ],
+        [
+            'created_at' => date('y-m-d H:i:s'),
+            'updated_at' => null,
+            'product_name' => 'instax reply',
+        ],
+    ]);
 
 
 

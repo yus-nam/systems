@@ -44,6 +44,11 @@ Route::get('/create', [ProductController::class, 'CreateProduct'])->name('create
 // 画像登録処理
 Route::post('/store', [ProductController::class, 'StoreImageProduct'])->name('store');
 
+// Route::resource('/store', [ProductController::class, 'StoreImageProduct'])->name('store');
+//この記載だとエラーになる
+
+
+
 //商品詳細画面への移動
 Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detail');
 
