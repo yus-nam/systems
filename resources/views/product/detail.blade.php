@@ -22,7 +22,7 @@
                     <label for="img_path">商品画像</label>
                     
                     <img src="{{ asset('$img_path')}}" class="card-img" name="img_path"/>
-                    <input type="file" class="img_path" name="img_path" id="img_path">
+                    <!-- <input type="file" class="img_path" name="img_path" id="img_path"> -->
 
                     @if($errors->has('img_path'))
                         <p>{{ $errors->first('img_path') }}</p>

@@ -45,8 +45,6 @@
                         <option value="satiela">SatieLA</option>
                     </select>
 
-
-
                     <button type="submit" class="btn btn-default">検索</button>                    
                     <!-- <button>
                         <a href="{{ route('list') }}" class="text-white">クリア</a>

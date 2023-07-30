@@ -20,6 +20,28 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="img_path">商品画像</label>
+                    <img src=" {{ '/storage/' . old('img_path') }}" class="w-100 mb-3" alt="">
+                    <form method="POST">
+<!--                     
+                    <img src="{{ asset('$img_path')}}" class="card-img" name="img_path"/> -->
+                    <input type="file" class="img_path" name="img_path" id="img_path">
+                    
+                    <!-- <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
+                    <input type="file" class="img_path" name="img_path" id="img_path"> -->
+
+                    <!-- @if($errors->has('img_path'))
+                        <p>{{ $errors->first('img_path') }}</p>
+                    @endif
+
+                    <form action="{{ route('list') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="img_path">
+                        <input type="submit" value="アップロード"> -->
+                    <!-- </form> -->
+                </div>
+
+                <div class="form-group">
                     <label for="product_name">商品名</label>
                     <input type="text" class="form-control" id="product_name" name="product_name" placeholder="product_name" value="{{ old('product_name') }}">
                     @if($errors->has('product_name'))
@@ -28,9 +50,15 @@
                 </div>
 
                 <div class="form-group">
-                <label for="maker" class="maker_name">メーカー</label>
-                    
-                
+                    <label for="maker" class="maker_name">メーカー</label>
+                    <input type="text" class="form-control" id="maker" name="maker" placeholder="maker" value="{{ old('maker') }}">
+                    <!-- <select name="maker" id="maker" placeholder="maker" class="maker_name">
+                        <option value="">メーカー名</option>
+                        <option value="acala">Acala</option>
+                        <option value="tears">Tears</option>
+                        <option value="yuuhi">YUUHI</option> 
+                        <option value="satiela">SatieLA</option>
+                    </select> -->
                 </div>
 
                 <div class="form-group">
@@ -57,30 +85,13 @@
                     @endif
                 </div>
 
-                <div class="form-group">
-                    <label for="img_path">商品画像</label>
-                    <img src=" {{ '/storage/' . old('img_path') }}" class="w-100 mb-3" alt="">
-                    <form method="POST">
-                    
-                    <!-- <img src="{{ asset('Vending') }}" class="card-img" name="img_path"/>
-                    <input type="file" class="img_path" name="img_path" id="img_path"> -->
-
-                    <!-- @if($errors->has('img_path'))
-                        <p>{{ $errors->first('img_path') }}</p>
-                    @endif
-
-                    <form action="{{ route('list') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="img_path">
-                        <input type="submit" value="アップロード"> -->
-                    <!-- </form> -->
-                </div>
+                
 
 
 
-                <button type="submit" class="btn btn-default" url="edit"><a href="list">更新</a></button>
+                <button type="submit" class="btn btn-default" url="#"><a href="#">更新</a></button>
 
-                <button type="submit" class="btn btn-default" url="list"><a href="detail">戻る</a></button>
+                <button type="submit" class="btn btn-default" url="detail"><a href="detail">戻る</a></button>
             </form>
         </div>
     </div>
