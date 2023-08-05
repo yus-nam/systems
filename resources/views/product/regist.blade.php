@@ -72,7 +72,7 @@
 
                 <button type="submit" class="btn btn-default" url=""><a href="list">登録</a></button>
 
-                <button type="submit" class="btn btn-default" url="list"><a href="list">戻る</a></button>
+                <button type="submit" class="btn btn-info" url="list"><a href="list">戻る</a></button>
             
             </form>
         </div>
