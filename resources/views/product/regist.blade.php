@@ -20,14 +20,14 @@
                 </div>
 
                 <label for="maker">メーカー</label>
-                <!-- <select name="maker" id="maker" placeholder="maker"> -->
-                    <!-- <option value="maker_name">メーカー名</option>
+                <!-- <select name="maker" id="maker" placeholder="maker">
+                    <option value="maker_name">メーカー名</option>
                     <option value="acala">Acala</option>
                     <option value="tears">Tears</option>
                     <option value="yuuhi">YUUHI</option> 
                     <option value="SatieLA">SatieLA</option> -->
 
-                    <!-- メーカー名はcompany_idで引用 -->
+                    <!-- メーカー名はcompany_idで引用-->
 
                 </select>
 

@@ -101,19 +101,19 @@ class ProductController extends Controller
 
             return view('product/detail');
         
-            // dd($company_id);
-        
-        }
+            dd($id);
+
+    }
     
-        public function showEditForm() {
+    public function showEditForm() {
         
-            // $data = Product::findOrFail();
+        // $data = Product::findOrFail();
         
-            return view('product/edit');
+        return view('product/edit');
         
-            // dd($data);
-    
-        }    
+        // dd($data);
+
+    }    
 
     //追加処理
     // public function CreateProduct(Request $request) {
@@ -153,7 +153,8 @@ class ProductController extends Controller
         dd($path);
     }
 
-    public function UpdateItemForm() {
+    public function updateProduct() {
+        //更新処理
         {  
             Product::create([
                 'img_path' => $request->img_path,

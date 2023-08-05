@@ -34,6 +34,7 @@ class Product extends Model
     protected $table = 'products';
 
     protected $primaryKey = 'company_id';
+    // protected $primaryKey = 'id';
     
     // protected $fillable = [
     //     'company_id',
@@ -92,10 +93,7 @@ class Product extends Model
             'comment' => $data->comment,
         ]);
 
-        
-
         return redirect()->route('list');
-
 
     }
 
@@ -112,20 +110,23 @@ class Product extends Model
         // dd($data);
     }
 
-    // public function updateProduct($data) {
-    //     // 更新処理ptn2
-    //     DB::table('products')->where()->Insert([
-    //         'company_id' => $data->company_id,
-    //         'img_path' => $data->img_path,
-    //         'product_name' => $data->product_name,
-    //         'maker' => $data->maker,
-    //         'price' => $data->price,
-    //         'stock' => $data->stock,
-    //         'comment' => $data->comment,
-    //     ]);
+    public function updateProduct($data) {
+        // 更新処理ptn2
+        DB::table('products')->where()->Insert([
+            'company_id' => $data->company_id,
+            'img_path' => $data->img_path,
+            'product_name' => $data->product_name,
+            'maker' => $data->maker,
+            'price' => $data->price,
+            'stock' => $data->stock,
+            'comment' => $data->comment,
+        ]);
 
-    //     // dd($data);
-    // }
+        // dd($data);
+    }
+
+
+
     
 
     public function deleteProductById($id) {
