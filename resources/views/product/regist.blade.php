@@ -10,6 +10,19 @@
             <form method="POST" action="store" enctype="multipart/form-data">
             <!-- <form action="/create" method="post"> -->
             @csrf
+
+                <div class="form-group">
+                    <label for="img_path">商品画像</label>
+                    
+                    <!-- <img src="/public/Vending/" alt="img_path" class="card-img" name="img_path" value="{{ old('img_path') }}"/> -->
+                    <!-- <img src="{{ asset('Vending/Vienna Coffee.jpeg') }}" alt=""> -->
+                    
+                    <input type="file" class="img_path" id="img_path" name="img_path" value="{{ old('img_path') }}">
+
+                    @if($errors->has('img_path'))
+                        <p>{{ $errors->first('img_path') }}</p>
+                    @endif
+                </div>
                 
                 <div class="form-group">
                     <label for="product_name">商品名</label>
@@ -29,7 +42,7 @@
 
                     <!-- メーカー名はcompany_idで引用-->
 
-                </select>
+                <!-- </select> -->
 
                 <div class="form-group">
                     <label for="price">価格</label>
@@ -52,19 +65,6 @@
                     <textarea class="form-control" id="comment" name="comment" placeholder="comment">{{ old('comment') }}</textarea>
                     @if($errors->has('comment'))
                         <p>{{ $errors->first('comment') }}</p>
-                    @endif
-                </div>
-
-                <div class="form-group">
-                    <label for="img_path">商品画像</label>
-                    
-                    <!-- <img src="/public/Vending/" alt="img_path" class="card-img" name="img_path" value="{{ old('img_path') }}"/> -->
-                    <!-- <img src="{{ asset('Vending/Vienna Coffee.jpeg') }}" alt=""> -->
-                    
-                    <input type="file" class="img_path" id="img_path" name="img_path" value="{{ old('img_path') }}">
-
-                    @if($errors->has('img_path'))
-                        <p>{{ $errors->first('img_path') }}</p>
                     @endif
                 </div>
 
