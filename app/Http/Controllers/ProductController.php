@@ -159,7 +159,8 @@ class ProductController extends Controller
             Product::create([
                 'img_path' => $request->img_path,
                 'product_name' => $request->product_name,
-                'maker' => $request->maker,
+
+                'maker' => $request->maker, /* メーカー名を更新、かつ選択式になるように受けたい */
                 'price' => $request->price,
                 'stock' => $request->stock,
                 'comment' => $request->comment,

@@ -2,18 +2,27 @@
 
 html{
     max-width: 1400px;
-    background-color: #D1EDE1;
-    font-size: 62.5%;
+    background-color: white;
+    font-size: 62.5%; /* 16px x 62.5% = 10px */
     display: block;
 
 }
 
 body{
-    color: navy;
+    color: black;
     font-size: 1.6rem;
 }
 
-h1, .page_name {
+a{
+    text-decoration: none;
+    color: navy;
+}
+
+a:hover {
+    color: red;
+}
+
+h1 .page_name {
     margin-top: 15px;
 }
 
@@ -22,14 +31,6 @@ h1, .page_name {
     padding-bottom: 15px;   
 }
 
-a,.edit {
-    text-decoration: none;
-    color: blue;
-}
-
-a:hover {
-    color: red;
-}
 .btn.btn-danger {
     background-color: red;
     opacity: 0.7;
