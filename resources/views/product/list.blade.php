@@ -81,7 +81,7 @@
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->company_id }}</td>
                     <td><img src="{{$product->img_path}}"></td>
-                    <td>{{ $product->img_path }}</td>
+                    <!-- <td>{{ $product->img_path }}</td> -->
                     <td>{{ $product->product_name }}</td>
                     <td>
                         <!-- <select name="maker" id="maker">
@@ -95,7 +95,8 @@
                     <td>{{ $product->comment }}</td>
                     <td>
                         <!-- <a href="{{ route('edit', ['id'=>$product->company_id]) }}" class="edit">詳細・編集</a>  -->
-                        <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="detail">詳細</a> 
+                        <!-- <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="detail"> 詳細</a> -->
+                        <button type="button" clas="btn btn-primary" onclick="location.href='/edit'">詳細編集</button>
                     </td>
                     <td>
                         <form action="{{ route('delete', ['id'=>$product->id]) }}" method="POST" onsubmit="return deleteProductById()">

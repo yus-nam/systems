@@ -1,6 +1,5 @@
 @extends('layouts.prod')
 
-
 @section('title', '商品詳細画面')
 
 @section('content')
