@@ -94,9 +94,12 @@
                     <td>{{ $product->stock }}</td>
                     <td>{{ $product->comment }}</td>
                     <td>
-                        <!-- <a href="{{ route('edit', ['id'=>$product->company_id]) }}" class="edit">詳細・編集</a>  -->
-                        <!-- <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="detail"> 詳細</a> -->
-                        <button type="button" clas="btn btn-primary" onclick="location.href='/edit'">詳細編集</button>
+                        <form action="{{ route('edit', ['id'=>$product->company_id]) }}" method="POST" onsubmit="return showDetailForm()">
+                            <!-- <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="detail">詳細・編集</a> -->
+                            <!-- <a href="{{ route('detail', ['id'=>$product->company_id]) }}" class="detail">詳細</a> -->
+                            <!-- <button type="button" name="detail" class="btn btn-primary">詳細・編集</button> -->
+                            <input type="button"  onclick='location.href="detail"' name="detail" value="詳細">
+                        </form>
                     </td>
                     <td>
                         <form action="{{ route('delete', ['id'=>$product->id]) }}" method="POST" onsubmit="return deleteProductById()">

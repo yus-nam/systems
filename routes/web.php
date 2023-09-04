@@ -48,7 +48,6 @@ Route::post('/store', [ProductController::class, 'StoreImageProduct'])->name('st
 //この記載だとエラーになる
 
 
-
 //商品詳細画面への移動
 Route::get('/detail', [ProductController::class, 'showDetailForm'])->name('detail');
 
