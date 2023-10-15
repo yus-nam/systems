@@ -42,7 +42,7 @@
                         <option value="acala">Acala</option>
                         <option value="tears">Tears</option>
                         <option value="yuuhi">YUUHI</option> 
-                        <option value="satiela">SatieLA</option>
+                        <option value="satiela">SatieEL</option>
                     </select>
 
                     <button type="submit" class="btn btn-default">検索</button>                    
